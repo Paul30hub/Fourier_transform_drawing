@@ -11,7 +11,7 @@ create a package that can reproduce a similar video. A particular interest on th
 - CORDOVAL Chloë : @Chloe971
 - KOAN Kenjy : @Kenjy-K
 - BURGAT Paul : @Paul30hub
-- GUILLAUMONT Pierre : @Pierre
+- GUILLAUMONT Pierre : @GuillaumontP
 
 # Timing :
 
