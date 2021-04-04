@@ -13,4 +13,5 @@ Given a function f which is 2π-periodic, can it be written as a sum of elementa
 
 So either f a function 2π-periodic, integrable on [0,2π], continues in pieces. We call exponential Fourier coefficients of f, the complex numbers defined by :
 
-![Screenshot](Cn.png)
+<img width="285" alt="Cn" src="https://user-images.githubusercontent.com/81428023/113521178-0ec08e00-9598-11eb-9e72-04083d4f7ef7.png">
+
