@@ -12,3 +12,6 @@ The idea of the Fourier series is as follows.
 Given a function f which is 2π-periodic, can it be written as a sum of elementary 2π-periodic functions ? 
 
 So either f a function 2π-periodic, integrable on [0,2π], continues in pieces. 
+We call exponential Fourier coefficients of f, the complex numbers defined by : 
+
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
