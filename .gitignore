@@ -8,3 +8,6 @@ build/
 .cache/
 *.egg-info/
 .pytest_cache/
+/venv
+/vscode_wp.code-workspace
+/.ipynb_checkpoints
