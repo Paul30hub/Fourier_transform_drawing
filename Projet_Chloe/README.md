@@ -6,6 +6,11 @@ In this part, I will present my part of the work to you.
 
 My part is to find the fourier coefficients to approximately locate given points.
 
+____________________________________________________________________________________________________________________________________________________________________
+
+First, I would like to apply the formula for Fourier coefficients with respect to several simple functions.
+Then in a second step, I would like to apply some more concrete examples, ie on an "image processing" finally to be able to redraw an image of .png type that we downloaded.
+
 ## Fourier Series :
 
 The idea of the Fourier series is as follows. 
@@ -27,7 +32,3 @@ It can also be expressed with the exponential coefficients:
 
 <img width="102" alt="exp" src="https://user-images.githubusercontent.com/81428023/113521218-56dfb080-9598-11eb-8efc-e9ff8e96eaab.png">
 
-____________________________________________________________________________________________________________________________________________________________________
-
-First, I would like to apply the formula for Fourier coefficients with respect to several simple functions.
-Then in a second step, I would like to apply some more concrete examples, ie on an "image processing" finally to be able to redraw an image of .png type that we downloaded.
