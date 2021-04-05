@@ -5,7 +5,7 @@ We divided the work into four between BURGAT Paul, KOAN Kenjy, GUILLAUMONT Pierr
 In this part, I will present my part of the work to you.
 
 My part is to find the fourier coefficients to approximately locate given points : 
-I will create a class for our package that provides functions for calculate the Fourier approximations of the extracted path and use coefficients from this approximation to determine the phase and amplitude of the circle needed for the final visualization.
+I will create a class Fourier_Series_Coeff for our package that provides functions for calculate the Fourier approximations of the extracted path and use coefficients from this approximation to determine the phase and amplitude of the circle needed for the final visualization.
 
 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
