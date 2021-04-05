@@ -8,10 +8,10 @@ create a package that can reproduce a similar video. A particular interest on th
 
 # Team Members :
 
-- CORDOVAL Chloë : @Chloe971
-- KOAN Kenjy : @Kenjy-K
-- BURGAT Paul : @Paul30hub
-- GUILLAUMONT Pierre : @GuillaumontP
+- CORDOVAL Chloë : @Chloe971 : chloe.ccordoval@etu.umontpellier.fr
+- KOAN Kenjy : @Kenjy-K : kenjy.koan@etu.umontpellier.fr
+- BURGAT Paul : @Paul30hub : paul.burgat@etu.umontpellier.fr
+- GUILLAUMONT Pierre : @GuillaumontP : pierre.guillaumont@etu.umontpellier.fr
 
 # Timing :
 
