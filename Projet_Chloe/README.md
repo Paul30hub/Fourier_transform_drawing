@@ -5,13 +5,12 @@ We divided the work into four between BURGAT Paul, KOAN Kenjy, GUILLAUMONT Pierr
 In this part, I will present my part of the work to you.
 
 My part is to find the fourier coefficients to approximately locate given points : 
-I will create a class that provides functions for calculate the Fourier approximations of the extracted path and use coefficients from this approximation to determine the phase and amplitude of the circle needed for the final visualization.
+I will create a class for our package that provides functions for calculate the Fourier approximations of the extracted path and use coefficients from this approximation to determine the phase and amplitude of the circle needed for the final visualization.
 
 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 First, I would like to apply the formula for Fourier coefficients with respect to several simple functions.
 Then in a second step, I would like to apply some more concrete examples, ie on an "image processing" finally to be able to redraw an image of .png type that we downloaded.
-
 
 
 ## Fourier Series :
