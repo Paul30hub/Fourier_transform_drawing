@@ -3,6 +3,12 @@ import numpy as np
 from scipy import integrate
 import matplotlib.pyplot as plt
 import math
+import sympy
+sympy.init_printing()
+
+#Objectives : 
+# - Find the Fourier series coefficients for a square wave
+# - Interpret square wave as a weighted sum of sinusoidal building blocks
 
 # Main functions
 
@@ -66,4 +72,3 @@ class Fourier_Series_Coeff :
                 approx[t]=approx[t]+an*np.cos(w*n*xvals[t])+bn*np.sin(w*n*xvals[t])
 
         return approx
-
