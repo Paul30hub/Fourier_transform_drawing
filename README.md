@@ -19,4 +19,11 @@ create a package that can reproduce a similar video. A particular interest on th
 
 - Due date (final project) : Week 16 (TBA). The github repository should be completed before this date (nothing pushed later will be taken into account). The oral     presentation should be recorded before Monday 19.
 
+# Goal
+
+The goal of our work is to achieve this result: 
+
+
+https://user-images.githubusercontent.com/81428023/113604934-3f5f0100-9646-11eb-9258-2ec7c92dbf21.mp4
+
 
