@@ -20,8 +20,8 @@ class FS():
         Ans = 0
 
         if n>0:
-            for i in range (1, n + 1):
-                Ans += (4/( (2*i - 1)* np.pi))* np.cos( (2*i - 1)* theta)
+            for i in range (0, n):
+                Ans -=np.cos( (i+1)* theta)/ ((i+1)* np.pi) 
 
         return Ans
 
@@ -32,8 +32,9 @@ class FS():
         Ans = 0
 
         if n > 0:
-            for i in range(1, n + 1):
-                Ans += (4/( (2*i - 1)* np.pi))* np.sin( (2*i - 1)* theta)
+            for i in range(0, n):
+                Ans -=np.sin( (i+1)* theta)/ ((i+1)* np.pi) 
+                
 
         return Ans
 
@@ -42,7 +43,7 @@ class FS():
            Radius of n th circle
         '''
 
-        return 4/( (2*n + 1)* np.pi)
+        return 1/((n+1)* np.pi)
 
     def PlotFS(self): #Représentation des séries de Fourier
 
@@ -75,7 +76,6 @@ class FS():
 
                 xco = xc
                 yco = yc
-                Ro = R
 
             axs[0].axis('square')
             axs[0].set_xlim([ -9/np.pi, 9/np.pi ])
@@ -105,3 +105,5 @@ if __name__ == '__main__':
 
     fs = FS(8,2)
     fs.PlotFS()
+
+# %%
