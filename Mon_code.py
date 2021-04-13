@@ -1,4 +1,3 @@
-#%%
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
@@ -7,7 +6,8 @@ from matplotlib.patches import ConnectionPatch
 #%% Class pour les séries de Fourier
 
 class FS():
-    def __init__(self, Circles, Cycles): #nombre de cercles et nombre de cycles
+
+    def __init__(self, Circles, Cycles, cf): #number of circles and number of cycles and fourier coef 
 
         self.Circles = Circles
         self.Cycles = Cycles
@@ -43,7 +43,7 @@ class FS():
            Radius of n th circle
         '''
 
-        return 1/((n+1)* np.pi)
+        return 1/((n+1)* np.pi)# radius of circle but not red radius 
 
     def PlotFS(self): #Représentation des séries de Fourier
 
@@ -56,7 +56,7 @@ class FS():
 
         for t in time:
 
-            thta = 2* np.pi* t
+            thta = 2 * np.pi * t
 
             axs[0].clear()
 
@@ -78,8 +78,8 @@ class FS():
                 yco = yc
 
             axs[0].axis('square')
-            axs[0].set_xlim([ -9/np.pi, 9/np.pi ])
-            axs[0].set_ylim([ -9/np.pi, 9/np.pi ])
+            axs[0].set_xlim([ -1,1])
+            axs[0].set_ylim([ -0.7,0.7])
 
             if (t > 0): # Deuxième plot
                 axs[1].plot([to,t], [ycirc, yc], color = 'm', linewidth = 1.5)
@@ -88,8 +88,8 @@ class FS():
             ycirc = yc
             
             axs[1].axis('square')
-            axs[1].set_xlim([ 0, 18/np.pi ])
-            axs[1].set_ylim([ -9/np.pi, 9/np.pi ])
+            axs[1].set_xlim([ 0, 4 ])
+            axs[1].set_ylim([ -1, 1])
 
             # Création d'une ligne rouge entre les 2 plots
 
@@ -102,8 +102,10 @@ class FS():
             plt.pause(1e-11)
 
 if __name__ == '__main__':
-
-    fs = FS(8,2)
+    cir = int(input('number of circle(s) : '))
+    cycles = int(input('number of cycles : '))
+    fcoef =[] 
+    for i in range(0, cir):
+        fcoef.append(int(input('Fourier coeficient number {} : '.format(i + 1))))
+    fs = FS(cir,cycles,fcoef)
     fs.PlotFS()
-
-# %%
