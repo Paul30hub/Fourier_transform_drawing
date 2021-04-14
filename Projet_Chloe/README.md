@@ -32,6 +32,11 @@ When we study Fourier transformations, we have several elements to take into acc
 - Number of points : Number of points at which to evalute function
 - Number of circles : This is needed to calculate proper offsets 
 
+
+
+<img width="599" alt="Capture d’écran 2021-04-14 à 15 54 05" src="https://user-images.githubusercontent.com/81428023/114722089-cc3a4680-9d39-11eb-9fae-5deb05360501.png">
+
+
 ## Class Description : 
 
 
