@@ -32,11 +32,10 @@ class FS():
            Y coordinate of n th circle
         '''
         Ans = 0
-
         if n > 0:
             for i in range(0, n):
                 # Ans -=np.sin( (i+1)* theta)/ ((i+1)* np.pi) 
-                Ans -=np.sin( (i+1)* theta) * self.fcoef[i] 
+                Ans -=np.sin( (i+1)* theta) * self.fcoef[i]
 
         return Ans
 
@@ -65,7 +64,7 @@ class FS():
             if (t > 0):
                 con.remove()
             
-            for i, c in zip(range(0, self.Circles), color): #Premier plot
+            for i, c in zip(range(0, self.Circles ), color): #Premier plot
                 xc = self.Xcenter(i, thta)
                 yc = self.Ycenter(i, thta)
                 R  = self.fcoef[i]  # self.Rds(i)###################### 
@@ -74,14 +73,14 @@ class FS():
                 axs[0].add_artist(crl)
 
                 if (i > 0):
-                    axs[0].plot([xco, xc], [yco, yc], color='b', linewidth=2)
+                    axs[0].plot([xco, xc], [yco, yc], color = 'b', linewidth = 2)
 
                 xco = xc
                 yco = yc
-
+            xylim_plot = sum(self.fcoef)
             axs[0].axis('square')
-            axs[0].set_xlim([ -5,5])
-            axs[0].set_ylim([ -5,5])
+            axs[0].set_xlim([ -xylim_plot, xylim_plot])
+            axs[0].set_ylim([ -xylim_plot, xylim_plot])
 
             if (t > 0): # Deuxième plot
                 axs[1].plot([to,t], [ycirc, yc], color = 'm', linewidth = 1.5)
@@ -90,8 +89,8 @@ class FS():
             ycirc = yc
             
             axs[1].axis('square')
-            axs[1].set_xlim([ 0, 4 ])
-            axs[1].set_ylim([ -1, 1])
+            axs[1].set_xlim([ 0, self.Cycles * 2 ])
+            axs[1].set_ylim([ -xylim_plot, xylim_plot])
 
             # Création d'une ligne rouge entre les 2 plots
 
@@ -108,6 +107,6 @@ if __name__ == '__main__':
     cycles = int(input('number of cycles : '))
     fcoef =[] 
     for i in range(0, cir):
-        fcoef.append(int(input('Fourier coeficient number {} : '.format(i + 1))))
+        fcoef.append(float(input('Fourier coeficient number {} : '.format(i + 1))))
     fs = FS(cir,cycles,fcoef)
     fs.PlotFS()
