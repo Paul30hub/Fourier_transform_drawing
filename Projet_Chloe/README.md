@@ -21,3 +21,6 @@ Then in a second step, I would like to apply some more concrete examples, ie on 
 
 We take the image above in order to calculate the Fourier approximation.
 
+Our class of functions allows us to do this work on the images which will be processed by the class made by KOAN Kenjy. This is the logical continuation of his work.
+
+When we study Fourier transformations, we have several elements to take into account :
