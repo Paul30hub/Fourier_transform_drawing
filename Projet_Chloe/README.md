@@ -33,3 +33,22 @@ When we study Fourier transformations, we have several elements to take into acc
 - Number of circles : This is needed to calculate proper offsets 
 
 ## Class Description : 
+
+
+In our class of functions we find :
+
+1) Function to generate x+iy at given time t
+2) Function to evaluate y at time t using Fourier approximation of degree N 
+3) Function to calculate Coefficients
+4) Approximation 
+
+When we apply our functions on the image defined above we have in first time :
+
+
+<img width="373" alt="Capture d’écran 2021-04-14 à 15 14 41" src="https://user-images.githubusercontent.com/81428023/114721368-25ee4100-9d39-11eb-98a6-fce721152f05.png">
+
+In a second time we need to Visualize the approximation as 2D image : 
+
+
+<img width="371" alt="Capture d’écran 2021-04-14 à 15 15 09" src="https://user-images.githubusercontent.com/81428023/114721549-50d89500-9d39-11eb-8e53-f7c830db9a30.png">
+
