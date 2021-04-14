@@ -48,7 +48,7 @@ class FS():
 
     def PlotFS(self): #Représentation des séries de Fourier
 
-        time = np.linspace(0, self.Cycles, self.Cycles* 70)
+        time = np.linspace(0, self.Cycles, self.Cycles* 200)
 
         fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(80, 60))
         fig.suptitle('Fourier Series', fontsize = 45, fontweight = 'bold') 
@@ -83,24 +83,24 @@ class FS():
             axs[0].set_ylim([ -xylim_plot, xylim_plot])
 
             if (t > 0): # Deuxième plot
-                axs[1].plot([to,t], [ycirc, yc], color = 'm', linewidth = 1.5)
+                axs[1].plot([xco,xc], [ycirc, yc], color = 'm', linewidth = 1.5)
 
             to = t
             ycirc = yc
             
             axs[1].axis('square')
-            axs[1].set_xlim([ 0, self.Cycles * 2 ])
+            axs[1].set_xlim([ -xylim_plot, xylim_plot ])
             axs[1].set_ylim([ -xylim_plot, xylim_plot])
 
             # Création d'une ligne rouge entre les 2 plots
 
-            con = ConnectionPatch( xyA = (t, yc), xyB = (xc, yc),
+            con = ConnectionPatch( xyA = (xc, yc), xyB = (xc, yc),
                                    coordsA = 'data', coordsB = 'data',
                                    axesA= axs[1], axesB= axs[0],
                                    color = 'red')
             axs[1].add_artist(con)
 
-            plt.pause(1e-11)
+            plt.pause(1e-12)
 
 if __name__ == '__main__':
     cir = int(input('number of circle(s) : '))
