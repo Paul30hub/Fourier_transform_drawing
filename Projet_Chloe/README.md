@@ -24,3 +24,10 @@ We take the image above in order to calculate the Fourier approximation.
 Our class of functions allows us to do this work on the images which will be processed by the class made by KOAN Kenjy. This is the logical continuation of his work.
 
 When we study Fourier transformations, we have several elements to take into account :
+
+- Function to bz transformed (as Python function object)
+- Tuple of range at which to evaluate our function 
+- A number of coefficients to calculate
+- Our period : f different than full length of function
+- Number of points : Number of points at which to evalute function
+- Number of circles : This is needed to calculate proper offsets 
