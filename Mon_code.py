@@ -7,10 +7,11 @@ from matplotlib.patches import ConnectionPatch
 
 class FS():
 
-    def __init__(self, Circles, Cycles, cf): #number of circles and number of cycles and fourier coef 
+    def __init__(self, Circles, Cycles, fcoef): #number of circles and number of cycles and fourier coef 
 
         self.Circles = Circles
         self.Cycles = Cycles
+        self.fcoef = fcoef
 
     def Xcenter(self, n, theta): # Coordonnée X du centre du cercle
         
@@ -21,7 +22,8 @@ class FS():
 
         if n>0:
             for i in range (0, n):
-                Ans -=np.cos( (i+1)* theta)/ ((i+1)* np.pi) 
+                # Ans -=np.cos( (i+1)* theta)/ ((i+1)* np.pi) 
+                Ans -= np.cos( (i+1)* theta) * fcoef[i] 
 
         return Ans
 
@@ -33,8 +35,8 @@ class FS():
 
         if n > 0:
             for i in range(0, n):
-                Ans -=np.sin( (i+1)* theta)/ ((i+1)* np.pi) 
-                
+                # Ans -=np.sin( (i+1)* theta)/ ((i+1)* np.pi) 
+                Ans -=np.sin( (i+1)* theta) * self.fcoef[i] 
 
         return Ans
 
@@ -43,7 +45,7 @@ class FS():
            Radius of n th circle
         '''
 
-        return 1/((n+1)* np.pi)# radius of circle but not red radius 
+        return 1/((n+1)* np.pi)# radius of circle but not  radius 
 
     def PlotFS(self): #Représentation des séries de Fourier
 
@@ -66,9 +68,9 @@ class FS():
             for i, c in zip(range(0, self.Circles), color): #Premier plot
                 xc = self.Xcenter(i, thta)
                 yc = self.Ycenter(i, thta)
-                R = self.Rds(i)
+                R  = self.fcoef[i]  # self.Rds(i)###################### 
 
-                crl = plt.Circle((xc, yc), R, color=c, alpha = 0.5, linewidth = 2)
+                crl = plt.Circle((xc, yc), R, color = c, alpha = 0.5, linewidth = 2)
                 axs[0].add_artist(crl)
 
                 if (i > 0):
@@ -78,8 +80,8 @@ class FS():
                 yco = yc
 
             axs[0].axis('square')
-            axs[0].set_xlim([ -1,1])
-            axs[0].set_ylim([ -0.7,0.7])
+            axs[0].set_xlim([ -5,5])
+            axs[0].set_ylim([ -5,5])
 
             if (t > 0): # Deuxième plot
                 axs[1].plot([to,t], [ycirc, yc], color = 'm', linewidth = 1.5)
