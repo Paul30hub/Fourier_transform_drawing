@@ -33,4 +33,3 @@ The Fourier series of f is then defined by:
 It can also be expressed with the exponential coefficients:
 
 <img width="102" alt="exp" src="https://user-images.githubusercontent.com/81428023/113521218-56dfb080-9598-11eb-8efc-e9ff8e96eaab.png">
-
