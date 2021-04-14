@@ -31,3 +31,5 @@ When we study Fourier transformations, we have several elements to take into acc
 - Our period : f different than full length of function
 - Number of points : Number of points at which to evalute function
 - Number of circles : This is needed to calculate proper offsets 
+
+## Class Description : 
