@@ -24,6 +24,7 @@ create a package that can reproduce a similar video. A particular interest on th
 The goal of our work is to achieve this result: 
 
 
-https://user-images.githubusercontent.com/81428023/113604934-3f5f0100-9646-11eb-9258-2ec7c92dbf21.mp4
+https://user-images.githubusercontent.com/81428023/114722501-23d8b200-9d3a-11eb-8ebb-05349c041d9b.mp4
+
 
 
