@@ -48,7 +48,7 @@ class FS():
 
     def PlotFS(self): #Représentation des séries de Fourier
 
-        time = np.linspace(0, self.Cycles, self.Cycles* 200)
+        time = np.linspace(0, self.Cycles, self.Cycles* 250)
 
         fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(80, 60))
         fig.suptitle('Fourier Series', fontsize = 45, fontweight = 'bold') 
@@ -83,7 +83,7 @@ class FS():
             axs[0].set_ylim([ -xylim_plot, xylim_plot])
 
             if (t > 0): # Deuxième plot
-                axs[1].plot([xco,xc], [ycirc, yc], color = 'm', linewidth = 1.5)
+                axs[1].plot(xco, ycirc,'.', color = 'm', linewidth = 1)
 
             to = t
             ycirc = yc
@@ -107,6 +107,6 @@ if __name__ == '__main__':
     cycles = int(input('number of cycles : '))
     fcoef =[] 
     for i in range(0, cir):
-        fcoef.append(float(input('Fourier coeficient number {} : '.format(i + 1))))
+        fcoef.append(float(input('Fourier coefficient number {} : '.format(i + 1))))
     fs = FS(cir,cycles,fcoef)
     fs.PlotFS()
