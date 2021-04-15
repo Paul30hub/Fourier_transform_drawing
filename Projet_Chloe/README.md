@@ -7,6 +7,10 @@ In this part, I will present my part of the work to you.
 My part is to find the fourier coefficients to approximately locate given points : 
 I will create a class Fourier_Series_Coeff for our package that provides functions for calculate the Fourier approximations of the extracted path and use coefficients from this approximation to determine the phase and amplitude of the circle needed for the final visualization.
 
+
+<img width="697" alt="2" src="https://user-images.githubusercontent.com/81428023/114897151-41c51600-9e11-11eb-9fe8-3de52a2b21b5.png">
+
+
 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 First, I would like to apply the formula for Fourier coefficients with respect to several simple functions.
