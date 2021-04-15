@@ -14,6 +14,8 @@ from copy import deepcopy
 from scipy.spatial import distance
 from scipy.interpolate import UnivariateSpline
 from copy import deepcopy
+# Fourier.get_circles
+from itertools import chain
 
 #Objectives : 
 
@@ -84,6 +86,14 @@ class Fourier_Series_Coeff :
 
             return(f.sum())
 
+        
+        def Cn(n) : 
+
+            c = y * np.exp(-1j * 2 * n * np.pi * t_vals/period)
+
+            return (c.sum()/c.size)
+
+
 
         #Approximation 
 
@@ -108,14 +118,6 @@ class Fourier_Series_Coeff :
                     approx[t]=approx[t]+an*np.cos(w*n*xvals[t])+bn*np.sin(w*n*xvals[t])
 
             return approx
-
-
-
-        def Cn(n) : 
-
-            c = y * np.exp(-1j * 2 * n * np.pi * t_vals/period)
-
-            return (c.sum()/c.size)
 
         
         coefs = [Cn(i) for i in range(1, N+1)]
