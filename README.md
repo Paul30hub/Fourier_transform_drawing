@@ -29,4 +29,9 @@ The goal of our work is to achieve this result:
 
 https://user-images.githubusercontent.com/81428023/114725610-ec1f3980-9d3c-11eb-8dd7-d1697204f9df.mp4
 
+From an image like the example of the horse :
+
+
+<img width="316" alt="Horse 15 02 48" src="https://user-images.githubusercontent.com/81428023/114897755-d62f7880-9e11-11eb-89e5-762ea97b3b33.png">
+
 
