@@ -1,2 +1,2 @@
 # Fourier-transform-drawing
-Partie animation: -Calculer les positions de chaque cercle tout au long du cycle
+Animation part: -Calculate the positions of each circle throughout the cycle
