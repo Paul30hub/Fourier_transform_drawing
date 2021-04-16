@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
 from matplotlib.patches import ConnectionPatch
 
-#%% Class pour les séries de Fourier
+#%% Class for Fourier series
 
 class FS():
 
@@ -13,7 +13,7 @@ class FS():
         self.Cycles = Cycles
         self.fcoef = fcoef
 
-    def Xcenter(self, n, theta): # Coordonnée X du centre du cercle
+    def Xcenter(self, n, theta): # X coordinates of the center of the circle
         
         '''
            X coordinate of n th circle
@@ -27,7 +27,7 @@ class FS():
 
         return Ans
 
-    def Ycenter(self, n, theta): # coordonnée Y du centre du cercle
+    def Ycenter(self, n, theta): # Y coordinates of the center of the circle
         '''
            Y coordinate of n th circle
         '''
@@ -39,12 +39,12 @@ class FS():
 
         return Ans
 
-    def Rds(self, n): #Rayon du cercle
+    def Rds(self, n): # Radius of the circle
         '''
            Radius of n th circle
         '''
 
-        return 1/((n+1)* np.pi)# radius of circle but not  radius 
+        return 1/((n+1)* np.pi)
 
     def PlotFS(self): #Représentation des séries de Fourier
 
@@ -64,7 +64,7 @@ class FS():
             if (t > 0):
                 con.remove()
             
-            for i, c in zip(range(0, self.Circles ), color): #Premier plot
+            for i, c in zip(range(0, self.Circles ), color): #Animation of circles left part
                 xc = self.Xcenter(i, thta)
                 yc = self.Ycenter(i, thta)
                 R  = self.fcoef[i]  # self.Rds(i)###################### 
@@ -82,7 +82,7 @@ class FS():
             axs[0].set_xlim([ -xylim_plot, xylim_plot])
             axs[0].set_ylim([ -xylim_plot, xylim_plot])
 
-            if (t > 0): # Deuxième plot
+            if (t > 0): #Curve drawn on the right side
                 axs[1].plot(xco, ycirc,'.', color = 'm', linewidth = 1)
 
             to = t
@@ -92,7 +92,7 @@ class FS():
             axs[1].set_xlim([ -xylim_plot, xylim_plot ])
             axs[1].set_ylim([ -xylim_plot, xylim_plot])
 
-            # Création d'une ligne rouge entre les 2 plots
+            # Creation of a red line between the 2 plots
 
             con = ConnectionPatch( xyA = (xc, yc), xyB = (xc, yc),
                                    coordsA = 'data', coordsB = 'data',
