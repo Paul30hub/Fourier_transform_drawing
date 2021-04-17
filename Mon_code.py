@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
 from matplotlib.patches import ConnectionPatch
+import cmath
 
 #%% Class pour les séries de Fourier
 
@@ -23,7 +24,7 @@ class FS():
         if n>0:
             for i in range (0, n):
                 # Ans -=np.cos( (i+1)* theta)/ ((i+1)* np.pi) 
-                Ans -= np.cos( (i+1)* theta) * fcoef[i] 
+                Ans -= np.cos( (i+1) * theta + cmath.polar(self.fcoef[i])[1] ) * abs(self.fcoef[i])
 
         return Ans
 
@@ -35,7 +36,7 @@ class FS():
         if n > 0:
             for i in range(0, n):
                 # Ans -=np.sin( (i+1)* theta)/ ((i+1)* np.pi) 
-                Ans -=np.sin( (i+1)* theta) * self.fcoef[i]
+                Ans -= np.sin( (i+1) * theta + cmath.polar(self.fcoef[i])[1] ) * abs(self.fcoef[i])
 
         return Ans
 
@@ -48,7 +49,7 @@ class FS():
 
     def PlotFS(self): #Représentation des séries de Fourier
 
-        time = np.linspace(0, self.Cycles, self.Cycles* 250)
+        time = np.linspace(0, self.Cycles, self.Cycles* 200)
 
         fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(80, 60))
         fig.suptitle('Fourier Series', fontsize = 45, fontweight = 'bold') 
@@ -67,7 +68,7 @@ class FS():
             for i, c in zip(range(0, self.Circles ), color): #Premier plot
                 xc = self.Xcenter(i, thta)
                 yc = self.Ycenter(i, thta)
-                R  = self.fcoef[i]  # self.Rds(i)###################### 
+                R  = abs(self.fcoef[i])  # self.Rds(i)###################### 
 
                 crl = plt.Circle((xc, yc), R, color = c, alpha = 0.5, linewidth = 2)
                 axs[0].add_artist(crl)
@@ -77,10 +78,12 @@ class FS():
 
                 xco = xc
                 yco = yc
-            xylim_plot = sum(self.fcoef)
+                
+            xlim_plot = sum(np.absolute(np.real(self.fcoef)))
+            ylim_plot = sum(np.absolute(np.imag(self.fcoef)))
             axs[0].axis('square')
-            axs[0].set_xlim([ -xylim_plot, xylim_plot])
-            axs[0].set_ylim([ -xylim_plot, xylim_plot])
+            axs[0].set_xlim([ -xlim_plot * 2, xlim_plot * 2])
+            axs[0].set_ylim([ -ylim_plot * 2, ylim_plot * 2])
 
             if (t > 0): # Deuxième plot
                 axs[1].plot(xco, ycirc,'.', color = 'm', linewidth = 1)
@@ -89,8 +92,8 @@ class FS():
             ycirc = yc
             
             axs[1].axis('square')
-            axs[1].set_xlim([ -xylim_plot, xylim_plot ])
-            axs[1].set_ylim([ -xylim_plot, xylim_plot])
+            axs[1].set_xlim([ -xlim_plot * 2, xlim_plot * 2])
+            axs[1].set_ylim([ -ylim_plot * 2, ylim_plot * 2])
 
             # Création d'une ligne rouge entre les 2 plots
 
@@ -100,13 +103,11 @@ class FS():
                                    color = 'red')
             axs[1].add_artist(con)
 
-            plt.pause(1e-12)
+            plt.pause(1e-14)
 
 if __name__ == '__main__':
-    cir = int(input('number of circle(s) : '))
-    cycles = int(input('number of cycles : '))
-    fcoef =[] 
-    for i in range(0, cir):
-        fcoef.append(float(input('Fourier coefficient number {} : '.format(i + 1))))
+    cir = 3 
+    cycles = 2 
+    fcoef = [2 + 1j, 1+1j, 1-1j] 
     fs = FS(cir,cycles,fcoef)
     fs.PlotFS()
