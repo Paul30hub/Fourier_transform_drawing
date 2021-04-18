@@ -22,6 +22,7 @@ matplotlib.rcParams['image.aspect'] = 'equal'
 
 #%%
 class ImageObject:
+    
     def __init__(self, url):
         self.url = url
         response = requests.get(url)
