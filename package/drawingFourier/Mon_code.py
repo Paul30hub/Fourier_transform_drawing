@@ -42,9 +42,9 @@ class FS():
         return Ans
 
     def PlotFS(self): # representation of Fourier serie
-            '''
+        '''
             Ploting Fourier serie 
-            '''
+        '''
         time = np.linspace(0, self.Cycles, self.Cycles* 200)
 
         fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(80, 60))
