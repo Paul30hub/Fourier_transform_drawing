@@ -8,8 +8,10 @@ import cmath
 
 class FS():
 
-    def __init__(self, Circles, Cycles, fcoef): #number of circles and number of cycles and fourier coef 
-
+    def __init__(self, Circles, Cycles, fcoef): #number of circles and number of cycles and fourier coefficients 
+        '''
+        Number of circles and cycles and Fourier coefficients
+        '''
         self.Circles = Circles
         self.Cycles = Cycles
         self.fcoef = fcoef
@@ -35,20 +37,14 @@ class FS():
         Ans = 0
         if n > 0:
             for i in range(0, n):
-                # Ans -=np.sin( (i+1)* theta)/ ((i+1)* np.pi) 
                 Ans -= np.sin( (i+1) * theta + cmath.polar(self.fcoef[i])[1] ) * abs(self.fcoef[i])
 
         return Ans
 
-    def Rds(self, n): # Radius of the circle
-        '''
-           Radius of n th circle
-        '''
-
-        return 1/((n+1)* np.pi)
-
-    def PlotFS(self): #Représentation des séries de Fourier
-
+    def PlotFS(self): # representation of Fourier serie
+            '''
+            Ploting Fourier serie 
+            '''
         time = np.linspace(0, self.Cycles, self.Cycles* 200)
 
         fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(80, 60))
@@ -68,7 +64,7 @@ class FS():
             for i, c in zip(range(0, self.Circles ), color): #Animation of circles left part
                 xc = self.Xcenter(i, thta)
                 yc = self.Ycenter(i, thta)
-                R  = abs(self.fcoef[i])  # self.Rds(i)###################### 
+                R  = abs(self.fcoef[i])   
 
                 crl = plt.Circle((xc, yc), R, color = c, alpha = 0.5, linewidth = 2)
                 axs[0].add_artist(crl)
@@ -106,6 +102,11 @@ class FS():
             plt.pause(1e-14)
 
 if __name__ == '__main__':
+    '''
+    Example :
+    with 3 circles and 2 repetitions
+
+    '''
     cir = 3 
     cycles = 2 
     fcoef = [2 + 1j, 1+1j, 1-1j] 
