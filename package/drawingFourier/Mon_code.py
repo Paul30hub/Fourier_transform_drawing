@@ -174,8 +174,7 @@ class FS():
 
 if __name__ == '__main__':
     '''
-    Example :
-    with 3 circles and 2 repetitions
+       Visualize star
     '''
     cir = len(cf)
     cycles = 1
@@ -184,3 +183,4 @@ if __name__ == '__main__':
         fcoef[i] = np.complex(cf[i][0],cf[i][1])
     fs = FS(cir,cycles,fcoef)
     fs.PlotFS()
+    
