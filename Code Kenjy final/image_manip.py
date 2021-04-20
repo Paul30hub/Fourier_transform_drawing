@@ -44,3 +44,7 @@ class ImageReader:
         ax[1].plot(self.x_table , self.y_table, 'k-')
         
         return self.time_table, self.x_table, self.y_table
+
+#test function imageReader
+#image = ImageReader("velo.jpeg")
+#image.get_tour()
