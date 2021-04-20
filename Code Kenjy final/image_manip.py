@@ -10,3 +10,5 @@ class ImageReader:
     """
     Class image
     """
+    def __init__(self, img):
+        self.img = Image.open(img)
