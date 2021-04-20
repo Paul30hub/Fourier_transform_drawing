@@ -1,4 +1,3 @@
-from __future__ import division
 import matplotlib
 from matplotlib import animation, rc
 import matplotlib.pyplot as plt
@@ -7,28 +6,24 @@ from IPython.display import HTML
 import numpy as np
 from PIL import Image, ImageEnhance
 import requests
-import math
-import sympy
 from io import BytesIO
 from copy import deepcopy
 from scipy.spatial import distance
 from scipy.interpolate import UnivariateSpline
 from copy import deepcopy
+# import packages
+import numpy as np 
+import matplotlib.pyplot as plt
+from PIL import Image
+from numpy import interp
+from math import tau
+from scipy.integrate import quad
 
-#Objectives : 
+class FourierTransform : 
 
-# - Find the Fourier series coefficients for a square wave
-# - Interpret square wave as a weighted sum of sinusoidal building blocks
+    # Calculate the complex Fourier coeffiients for a given function
 
-# Main functions
-
-class Fourier_Series_Coeff : 
-
- # Calculate the complex Fourier coeffiients for a given function
-
-    def __init__(self, fxn, rnge, N = 500, period = None, num_points = 1000, num_circles = 50) :
-
-
+    def __init__(self,t, t_list, x_list, y_list, fxn, rnge, N = 500, period = None, num_points = 1000, num_circles = 50 ):
     # fxn : Function to be transformed (as Python function object)
     # rnge : (.,.) tuple of range at which to evaluate fxn
     # N : Number of coefficients to calculate
@@ -58,63 +53,13 @@ class Fourier_Series_Coeff :
         self.N = N
 
         if period == None :
-
             period = rnge[1]
 
         self.period = period
 
 
-    # function to generate x+iy at given time t
-
-        def _f(self,t, t_list, x_list, y_list):
-
-            self.t = t
-            self.t_list = t_list
-            self.x_list = x_list
-            self.y_list = y_list
-
-            return np.interp(t, t_list, x_list + 1j*y_list)
-
-
-        def Coco(x, degree = N) :
-
-        #Evaluate the function y at time t using Fourier approximation of degree N
-
-            f = np.array([2 * coefs[i -1] * np.exp(1j * 2 * i * np.pi * x/period) for i in range(1, degree)])
-
-            return(f.sum())
-
-
-        #Approximation 
-
-        def FourierSeriesApprox(self,xvals,yvals,nmax):
-
-            self.xvals = xvals
-            self.yvals = yvals
-            self.nmax = nmax
-
-
-            approx=np.zeros_like(yvals)
-            T=(xvals[-1]-xvals[0])
-            w=2*np.pi/T
-            dt=xvals[1]-xvals[0]
-            approx=approx+1/T*(np.sum(yvals)*dt)
-
-
-            for t in range(len(xvals)):
-                for n in (np.arange(nmax)+1):
-                    an=2/T*np.sum(np.cos(w*n*xvals)*yvals)*dt
-                    bn=2/T*np.sum(np.sin(w*n*xvals)*yvals)*dt
-                    approx[t]=approx[t]+an*np.cos(w*n*xvals[t])+bn*np.sin(w*n*xvals[t])
-
-            return approx
-
-
-
         def Cn(n) : 
-
             c = y * np.exp(-1j * 2 * n * np.pi * t_vals/period)
-
             return (c.sum()/c.size)
 
         
@@ -124,18 +69,13 @@ class Fourier_Series_Coeff :
         self.real_coefs = [c.real for c in self.coefs]
         self.imag_coefs = [c.imag for c in self.coefs]
 
-
         self.amplitudes = np.absolute(self.coefs)
         self.phases = np.angle(self.coefs)
 
 
-
         def f(x, degree = N) :
-
-        #Evaluate the function y at time t using Fourier approximation of degree N
-
-            f = np.array([2 * coefs[i -1] * np.exp(1j * 2 * i * np.pi * x/period) for i in range(1, degree)])
-
+            #Evaluate the function y at time t using Fourier approximation of degree N
+            f= np.array([2 * coefs[i -1] * np.exp(1j * 2 * i * np.pi * x/period) for i in range(1, degree)])
             return(f.sum())
 
 
@@ -159,3 +99,41 @@ class Fourier_Series_Coeff :
 
         # Set intercept to same as original function
         self.fourier_approximation = fourier_approximation
+
+        # function to generate x+iy at given time t
+        def p(t, t_list, x_list, y_list):
+            return np.interp(t, t_list, x_list + 1j*y_list)
+
+        def coef_list(t_list, x_list, y_list, order=10):
+            coef_list = []
+            for n in range(-order, order+1):
+                real_coef = quad(lambda t: np.real(p(t, t_list, x_list, y_list) * np.exp(-n*1j*t)), 0, tau, limit=100, full_output=1)[0]/tau
+                imag_coef = quad(lambda t: np.imag(p(t, t_list, x_list, y_list) * np.exp(-n*1j*t)), 0, tau, limit=100, full_output=1)[0]/tau
+                coef_list.append([real_coef, imag_coef])
+            return np.array(coef_list)
+
+
+
+        order = 50
+        cf = coef_list(t_list, x_list, y_list, order)
+        print(cf)
+
+
+
+        def DFT(t, coef_list, order=10):
+            kernel = np.array([np.exp(-n*1j*t) for n in range(-order, order+1)])
+            series = np.sum( (coef_list[:,0]+1j*coef_list[:,1]) * kernel[:])
+            return np.real(series), np.imag(series)
+
+
+        space  = np.linspace(0,tau,300)
+        xdft = [DFT(t,cf,order)[0] for t in space]
+        ydft = [DFT(t,cf,order)[1] for t in space]
+
+
+        fig,ax = plt.subplots(figsize = (5,5))
+        ax.plot(xdft,ydft,'r--')
+        ax.plot(x_list,y_list,'k-')
+        ax.set_aspect('equal','datalim')
+        xmin, xmax = plt.xlim()
+        ymin,ymax = plt.ylim()
