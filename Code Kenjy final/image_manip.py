@@ -44,7 +44,3 @@ class ImageReader:
         ax[1].plot(self.x_table , self.y_table, 'k-')
         
         return self.time_table, self.x_table, self.y_table
-
-#test function 
-#image = ImageReader("star.jpeg")
-#image.get_tour()
