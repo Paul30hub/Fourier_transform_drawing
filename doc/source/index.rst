@@ -6,9 +6,6 @@
 Welcome to Fourier-Transform-Drawing's documentation!
 =====================================================
 
-   Page0.rst
-   Page1.rst
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -16,7 +13,7 @@ Welcome to Fourier-Transform-Drawing's documentation!
    Page0
    Page1
 
-.. image:: _static/cat.png
+.. image:: ./_static/cat.png
    :height: 100
    :width: 200
    :scale: 50
