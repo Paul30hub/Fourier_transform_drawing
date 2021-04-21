@@ -6,7 +6,8 @@
 Welcome to Fourier-Transform-Drawing's documentation!
 =====================================================
 
-   kenjy.rst
+   Page0.rst
+   Page1.rst
 
 .. toctree::
    :maxdepth: 2
