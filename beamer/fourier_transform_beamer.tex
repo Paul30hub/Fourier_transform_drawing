@@ -1,2 +1,130 @@
 
 \documentclass[11pt]{beamer}
+
+
+\textcolor{red}{\underline{\textbf{Spinning Circles Fourier Visualization}}}\\
+
+\section{Introduction}
+
+
+\textcolor{blue}{\underline{\textbf{Description : }}}
+
+
+\textcolor{blue}{\underline{\textbf{Why the Fourier series are
+interesting?}}
+
+
+
+
+
+
+\section{Step 1 : NOM part Kenjy:}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Step 2 : Calculate Fourier Approximations}
+
+In this part, our goal is to \underline{calculate the Fourier approximations}.
+
+For this, we will calculate the complex Fourier coefficients for a given function.
+
+First, let's come back to the definition of complex Fourier coefficients.
+
+
+
+For period L, generally , We can see that “COMPLEX FOURIER SERIES" is $$\boxed{f(t) = \sum_{i=-\infty}^{\infty} C_{n} e^{i n t \frac{2\pi}{L}}}$$
+
+The coefficients, Cn, are normally complex numbers : 
+
+$$\boxed{Cn = \frac{1}{L}\int^{-\pi}_{\pi}e^{- i n t\frac{2\pi}{L}}f(t)dt}$$
+
+\underline{mathematical proof} : 
+
+\includegraphics{2.png}
+
+In this part, therefore, we will describe the functions that are in my Fourier_Series_Coeff class.
+
+We are looking to calculate the complex Fourier coefficients for any given function so we will start by introducing the __init__ function which is called immediately after an instance of the class is created; it's a kind of builder.
+
+
+This function will take seven input parameters which are : 
+
+- fxn = Function to be transformed (as Python function object)
+- rnge = Tuple of range at which to evaluate fxn
+- N = Number of coefficients to calculate
+- Period = f different than full length of function
+- Num_points = Number of points at which to evalute function
+- Num_circles = This is needed to calculate proper offsets
+- Self = A reference to the current instance of the class
+
+\underline{First step}
+
+First, our __init__ function will save the original coordinates when we plot them in step number one.
+After, Spline function doesn't make endpoints exactly equal because This sets the firts and last points to their averagee.
+
+We can note that The transformation works best around edges when the function starts at zero.
+We are therefore going to initialize it to 0.
+
+\underline{Second step}
+
+Secondly, we define a function in our _init_ function which generates the complex numbers x + iy at a given time t with x representing the real part and y the imaginary part.
+
+We can specify that np.interp is a function from numpy that returns the one-dimensional piecewise linear interpolant to a function with given discrete data points (xp, fp), evaluated at x.
+
+Next we define a function called COCO which evaluates a function f at time t using a Fourier approximation.
+
+Now, we define the function Cn which takes as input parameter an integer n and which calculates the complex coefficients.
+
+\underline{Third step}
+
+We deal in a third step with the approximation that interests us most for the rest. 
+
+We therefore define a function called FourierSeriesApprox which calculates these coefficients for the approximation of the studied image.
+
+This function takes as input variables, xvals, yvals, nmax. 
+
+Now we are going to define the amplitudes and the phases of our Fourier series.
+
+First, we break the series down into two parts: real part, imaginary part.
+
+The amplitude will then be the absolute value per element, that's why we use the "absolute" function in the "Numpy" library which calculates the absolute value by element.
+
+The period of the Series will be the angle of the complex argument. For that, we use the "angle" function of the "Numpy" library which returns the angle of the complex argument.
+
+At the end, we can evaluate the given function f at all the points specified in the domain at time t that is to say that we define : 
+
+      fourier_approximation = np.array([f(t, degree = N).real for t in t_vals])
+      circles_approximation  = np.array([f(t, degree = self.num_circles).real for t in t_vals])
+
+
+
+
+
+
+
+
+
+
+
+\section{Step 3 : NOM part Pierre/Paul:}
+
+
+
+\section{Application on selected images}
+
+
+
+
+
+
+
+\section{Conclusion:}
