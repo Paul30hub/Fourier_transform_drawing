@@ -1,6 +1,27 @@
 ## Work organization
 This document describes the work organization between BURGAT Paul, CORDOVAL Chloë, GUILLAUMONT Pierre and KOAN Kenjy.
 
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+### Cordoval Chloë : 
+
+My part is to find the fourier coefficients to approximately locate given points : I will create a class for our package that provides functions for calculate the Fourier approximations 
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+### Burgat Paul :
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+### Guillaumont Pierre :
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+### Koan Kenjy :
+
+=======
 # Task affectation
 
 * [Kenjy] Image processing and conversion into points : 
@@ -28,3 +49,4 @@ We need to calculate the Fourier approximations of these two paths, and use coef
 # Useful resources
 https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/
 https://contra.medium.com/drawing-anything-with-fourier-series-using-blender-and-python-c0881e1b738c
+
