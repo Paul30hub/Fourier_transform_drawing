@@ -6,11 +6,16 @@
 Welcome to Fourier-Transform-Drawing's documentation!
 =====================================================
 
+   kenjy.rst
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-.. image:: https://i.stack.imgur.com/KkuiA.jpg
+   Page0
+   Page1
+
+.. image:: _static/cat.png
    :height: 100
    :width: 200
    :scale: 50
