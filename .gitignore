@@ -12,3 +12,4 @@ build/
 /vscode_wp.code-workspace
 /.ipynb_checkpoints
 .DS_Store
+__pycache__
