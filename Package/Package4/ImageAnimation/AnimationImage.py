@@ -8,12 +8,12 @@ import cmath
 
 class FS():
 
-    def __init__(self, Circles, Cycles, fcoef): #number of circles and number of cycles and fourier coefficients 
+    def __init__(self, fcoef): #number of circles and number of cycles and fourier coefficients 
         '''
         Number of circles and cycles and Fourier coefficients
         '''
-        self.Circles = Circles
-        self.Cycles = Cycles
+        self.Circles = len(fcoef)
+        self.Cycles = 2
         self.fcoef = fcoef
 
     def Xcenter(self, n, theta): # X coordinates of the center of the circle
