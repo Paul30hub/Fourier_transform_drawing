@@ -9,6 +9,6 @@ setup(
   author='Burgat Paul, Cordoval Chloë, Guillaumont Pierre, Koan Kenjy',
   author_email='paul.burgat@etu.umontpellier.fr, chloe.cordoval@etu.umontpellier.fr, pierre.guillaumont@etu.umontpellier.fr, kenjy.koan@etu.umontpellier.fr',
   license='MIT',
-  packages=['draw_circle_fourier','draw_circle_fourier.CoeffFourier', 'biketrauma.ImageAnimation', 'biketrauma.ImageReader'],
+  packages=['draw_circle_fourier','draw_circle_fourier.CoeffFourier', 'draw_circle_fourier.ImageAnimation', 'draw_circle_fourier.ImageReader'],
   zip_safe=False
 )
