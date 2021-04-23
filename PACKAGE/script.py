@@ -1,3 +1,4 @@
+#%%
 import matplotlib.pyplot as plt # for plotting and creating figures
 import numpy as np # for easy and fast number calculation
 from math import tau
@@ -9,11 +10,9 @@ from draw_circle_fourier import DrawAnimation
 
 #Part Kenjy 
 
-image = ImageReader("Velo.jpeg")
+image = ImageReader("https://raw.githubusercontent.com/Paul30hub/Fourier_transform_drawing/main/PACKAGE/draw_circle_fourier/DATA/velo.jpeg")
 time_table, x_table, y_table = image.get_tour()
 print(time_table, x_table, y_table)
-
-
 
 #Part COCO
 
@@ -44,3 +43,4 @@ anim = b.visualize(x_DFT, y_DFT, fouriercoeff, order, space, [xmin, xmax, ymin, 
 #HTML(anim.to_html5_video())
 #anim.save('pi.mp4',writer='ffmpeg')
 anim.save('velo.gif',writer='pillow')
+# %%
