@@ -6,6 +6,13 @@
 Welcome to Fourier-Transform-Drawing's documentation!
 =====================================================
 
+
+This package was made as a project in the software devlopment course `Link <https://github.com/bcharlier/HMMA238>`_
+
+The main goal of the package is to reproduce an image using Fourier transform.
+
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -13,20 +20,5 @@ Welcome to Fourier-Transform-Drawing's documentation!
    Page0
    Page1
 
-.. image:: ./_static/cat.png
-   :height: 100
-   :width: 200
-   :scale: 50
-   :align: center
-   :alt: ordinateur
-
-   Caption text rendered below the image...
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 

@@ -4,6 +4,11 @@ from math import tau
 from scipy.integrate import quad
 from numpy import interp
 
+def f(t, time_table, x_table, y_table):
+            #Convert the X and Y coords to complex number over time
+            X = np.interp(t, time_table, x_table) 
+            Y = 1j*np.interp(t, time_table, y_table)
+            return X + Y
 
 class Fourier : 
 
@@ -13,36 +18,21 @@ class Fourier :
         self.x_table = x_table
         self.y_table = y_table
 
-    #@staticmethod
-
     def coef_list(self,time_table, x_table, y_table, order) :
-
-        def func(t, time_table, x_table, y_table):
-            return np.interp(t, time_table, x_table + 1j*y_table)
-
-        order = 10
         coef_list = []
             
-        for n in range(-order, order+1) :
-
-            real_coef = quad(lambda t : np.real(func(t,self.time_table, self.x_table, 1j*self.y_table) * np.exp(-n * 1j * t)), 0, tau, limit=100, full_output=1)[0]/tau
-            imag_coef = quad(lambda t : np.imag(func(t,self.time_table, self.x_table, 1j*self.y_table) * np.exp(-n * 1j *t)), 0, tau, limit=100, full_output=1)[0]/tau
-
-            self.real_coef = real_coef
-            self.imag_coef = imag_coef
-
-                
+        for n in range(-order, order+1):
+        #integrate across f .
+            real_coef = quad(lambda t: np.real(f(t, time_table, x_table, y_table) * np.exp(-n*1j*t)), 0, tau, limit=100, full_output=1)[0]/tau
+            imag_coef = quad(lambda t: np.imag(f(t, time_table, x_table, y_table) * np.exp(-n*1j*t)), 0, tau, limit=100, full_output=1)[0]/tau
             coef_list.append([real_coef, imag_coef])
 
         return np.array(coef_list)
 
 
-    def DFT(self, t, coef_list, order=10):
-        
+    def DFT(self, t, coef_list, order):
+    #Compute the discrete fourier series with a given order
         kernel = np.array([np.exp(-n*1j*t) for n in range(-order, order+1)])
-        series = np.sum((coef_list[:,0]+1j*coef_list[:,1]) * kernel[:])
-
-        self.kernel = kernel
-        self.series = series
+        series = np.sum( (coef_list[:,0]+1j*coef_list[:,1]) * kernel[:])
 
         return np.real(series), np.imag(series)

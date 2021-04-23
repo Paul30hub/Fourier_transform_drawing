@@ -13,36 +13,27 @@ class ImageReader:
     Class image
     """
     def __init__(self, img):
-        self.img = Image.open(img)
+        self.im = Image.open(img).convert("L")
+        
     
-    def get_tour(self, level=[200]):
-        #prepare plot
-        fig, ax = plt.subplots(1, 2, figsize=(10, 5))
-        ax[0].set_aspect('equal', 'datalim')
-        ax[1].set_aspect('equal', 'datalim')
-        ax[0].set_title('Before Centered')
-        ax[1].set_title('After Centered')
-
-        # read image to array, then get image border with contour
-        im = np.array(self.img.convert('L'))
-        contour_plot = ax[0].contour(im, levels=level, colors='black', origin='image')
-
-        # Get Contour Path and create lookup-table
+    def get_tour(self, level= [200]):
+        contour_plot = plt.contour(self.im,levels = level,origin='image')
         contour_path = contour_plot.collections[0].get_paths()[0]
-        x_table, y_table = contour_path.vertices[:, 0], contour_path.vertices[:, 1]
-        time_table = np.linspace(0, tau, len(x_table))
+        x_table, y_table = contour_path.vertices[:,0], contour_path.vertices[:,1]
 
-        # Simple method to center the image
+        #Center X and Y
         x_table = x_table - min(x_table)
         y_table = y_table - min(y_table)
-        x_table = x_table - max(x_table) / 2
-        y_table = y_table - max(y_table) / 2
+        x_table = x_table - max(x_table)/2
+        y_table = y_table - max(y_table)/2
+
+        #Visualize
+        plt.plot(x_table, y_table)
+        #For the period of time 0-2*pi
+        time_table = np.linspace(0,tau,len(x_table))
 
         self.x_table = x_table
         self.y_table = y_table
         self.time_table = time_table
-
-        # Visualization
-        ax[1].plot(self.x_table , self.y_table, 'k-')
         
         return self.time_table, self.x_table, self.y_table
