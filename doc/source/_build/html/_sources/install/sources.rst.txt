@@ -1,0 +1,16 @@
+Sources and some more
+=========================
+
+The mathematics behind and more explainations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. _An Interactive Guide To The Fourier Transforms: https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/
+.. _An Interactive Introduction to Fourier Transforms Jez Swanson: http://www.jezzamon.com/fourier/index.html
+
+
+Some inspiring videos
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. _Mais qu'est-ce qu'une série de Fourier ? 3Blue1Brown series: https://www.youtube.com/watch?v=r6sGWTCMz2k
+.. _Coding Challenge : Drawing with Fourier Transform and Epicycle: https://www.youtube.com/watch?v=MY4luNgGfms
+.. _Deux (deux ?) minutes pour l'éléphant de Fermi & Neumann: https://www.youtube.com/watch?v=uazPP0ny3XQ

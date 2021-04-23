@@ -1,24 +1,47 @@
-.. Fourier-Transform-Drawing documentation master file, created by
+.. draw-circle-fourier documentation master file, created by
    sphinx-quickstart on Wed Apr 21 10:19:08 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Fourier-Transform-Drawing's documentation!
+Welcome to draw-circle-fourier 's documentation!
 =====================================================
 
 
 This package was made as a project in the software devlopment course `Link <https://github.com/bcharlier/HMMA238>`_
-
 The main goal of the package is to reproduce an image using Fourier transform.
 
-
+Contents
+^^^^^^^^^
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :Caption: Installation, requirements, how to use, contacts and sources
 
-   Page0
-   Page1
+   install/installation.rst
+   install/requirements.rst
+   install/how_to_use.rst
+   install/contact.rst
+   install/sources.rst
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Fourier Transform
+
+   fourier/image.rst
+   fourier/coeff.rst
+   fourier/draw.rst
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Gallery of examples
+
+   fourier/gallery/examples.rst
 
 
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 
