@@ -9,19 +9,37 @@ import requests
 from io import BytesIO
 
 class ImageReader:
-    """
-    Class image
+    """ Read the url that contains an image in JPG, JPEG or PNG format then converting into coordinates.
+
     """
     def __init__(self, url):
+        """Constructor
+        Read the image and convert to gray scale
+        Threshold the gray image to get pure black and white image
+
+        :param url: link that points to the image
+        :type x_table: url
+        """
         self.url = url
         response = requests.get(url)
         self.img = Image.open(BytesIO(response.content))
         self.im = self.img.convert("L")
         
-        
-        
     
     def get_tour(self, level= [200]):
+        """
+        Find the contour of image
+        Split the points and store in x_table and y_table
+        Centering the points to origin: (0,0)
+        Make a time table from 0 to 2PI
+
+        :param x_table: coordinate of the X axis
+        :type x_table: float
+        :param y_table: coordinate on the Y axis
+        :type y_table: float
+        :param time_table: time list from 0 to 2PI
+        :type time_table: float
+        """
 
         contour_plot = plt.contour(self.im,levels = level,origin='image')
         contour_path = contour_plot.collections[0].get_paths()[0]

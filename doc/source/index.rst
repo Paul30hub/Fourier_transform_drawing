@@ -7,15 +7,16 @@ Welcome to draw-circle-fourier 's documentation!
 =================================================
 
 
-This package was made as a project in the software devlopment course `Link <https://github.com/bcharlier/HMMA238>`_
-The main goal of the package is to reproduce an image using Fourier transform.
+This package was created as a group project in the software devlopment course `HMMA238 <https://github.com/bcharlier/HMMA238>`_
+
+The main goal of the package is to reproduce an image and drawing it using Fourier transform.
 
 Contents
 ^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
-   :Caption: Installation, requirements, how to use, contacts and sources
+   :Caption: To begin
 
    install/installation.rst
    install/requirements.rst

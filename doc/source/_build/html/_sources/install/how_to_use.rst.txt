@@ -54,7 +54,3 @@ You have to replace 'your_url' in the ImageReader function with your own URL tha
 
 You can try for example with this image : https://raw.githubusercontent.com/Paul30hub/Fourier_transform_drawing/main/PACKAGE/draw_circle_fourier/DATA/velo.jpeg/
 
-Then, you can chose the 'order' for the calculation of the Fourier coefficients, which corresponds to the number of terms used to calculate the fourier series.
-
-Finally, you can choose the extension if you either want to save the animation as .gif or .mp4
-

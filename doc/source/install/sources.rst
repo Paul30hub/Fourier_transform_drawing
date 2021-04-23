@@ -1,16 +1,16 @@
-Sources and some more
+Sources and documentation
 =========================
 
-The mathematics behind and more explainations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The math explanation 
+^^^^^^^^^^^^^^^^^^^^^
 
 `An Interactive Guide To The Fourier Transforms <https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/>`_
 
 `An Interactive Introduction to Fourier Transforms Jez Swanson <http://www.jezzamon.com/fourier/index.html>`_
 
 
-Some inspiring videos
-^^^^^^^^^^^^^^^^^^^^^^
+Videos sources
+^^^^^^^^^^^^^^
 
 `What is a fourier series (3Blue1Brown) <https://www.youtube.com/watch?v=r6sGWTCMz2k>`_
 
