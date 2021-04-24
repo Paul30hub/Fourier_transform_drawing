@@ -43,18 +43,25 @@ class DrawAnimation:
 
         def animate(i):
             # animate lines
+            """ 
+                Create the drawing of the image and spinning circles sanimation
+            """
             line.set_data(x_DFT[:i], y_DFT[:i])
-            # animate circles
+            # array of radius of each circles
             r = [np.linalg.norm(coef[j]) for j in range(len(coef))]
+            # position is on the last circle
             pos = coef[order]
             c = update_c(coef, i / len(space) * tau)
             idx = sort_velocity(order)
             for j, rad, circle in zip(idx,radius,circles):
                 new_pos = pos + c[j]
+                # plot radius in each circles
                 rad.set_data([pos[0], new_pos[0]], [pos[1], new_pos[1]])
                 theta = np.linspace(0, tau, 50)
+                # plot each circles
                 x, y = r[j] * np.cos(theta) + pos[0], r[j] * np.sin(theta) + pos[1]
                 circle.set_data(x, y)
+                # increase pos for plot from the last circle displayed
                 pos = new_pos
 
         # Animation
