@@ -6,7 +6,25 @@ from math import tau
 import cmath
 
 class DrawAnimation:
+    """Creates an animation that draws a curve representing an image using Fourier coefficients.
+    
+    :param x_DFT: Real part of the Fourier transform.
+    :type x_DFT: list.
+    :param y_DFT: Imaginary part of the Fourier transform.
+    :type y_DFT: list.
+    :param coef: Fourier coefficients.
+    :type coef: ndarray.
+    :param order: Variable that we use to determine the number of Fourier coefficients that we will generate.
+    :type order: int.
+    :param space: Variable used to give the number of images for the animation
+    :type space: tuple.
+    :param fig_lim: Define the limit of the x and y axes of our plot.
+    :type fig_lim: list.
+    """
     def __init__(self, x_DFT, y_DFT, coef, order, space, fig_lim):
+        """
+            Construction method
+        """
         self.x_DFT = x_DFT
         self.y_DFT = y_DFT
         self.coef = coef 
@@ -15,6 +33,9 @@ class DrawAnimation:
         self.fig_lim = fig_lim
         
     def visualize(self, x_DFT, y_DFT, coef, order, space, fig_lim):
+        """
+            Creates the drawing of the image and spinning circles animation.
+        """
         fig, ax = plt.subplots()
         lim = max(fig_lim)
         ax.set_xlim([-lim, lim])
@@ -27,6 +48,10 @@ class DrawAnimation:
         circles = [plt.plot([], [], 'r-', linewidth=0.5)[0] for _ in range(2 * order + 1)]
 
         def update_c(c, t):
+            """
+                Creates a new ndarray new_c for plot radius in each circle and plot each circle in the 
+                function animate.
+            """
             new_c = []
             for i, j in enumerate(range(-order, order + 1)):
                 dtheta = -j * t
@@ -36,6 +61,9 @@ class DrawAnimation:
             return np.array(new_c)
 
         def sort_velocity(order):
+            """
+                Creates a variable that iterates through the numbers between order+i and order-i.
+            """
             idx = []
             for i in range(1,order+1):
                 idx.extend([order+i, order-i]) 
@@ -44,7 +72,7 @@ class DrawAnimation:
         def animate(i):
             # animate lines
             """ 
-                Create the drawing of the image and spinning circles sanimation
+                Displays the radius of each circle as well as the circle. This function also plots the approximation of the image.
             """
             line.set_data(x_DFT[:i], y_DFT[:i])
             # array of radius of each circles
