@@ -10,7 +10,19 @@ def f(t, time_table, x_table, y_table):
             Y = 1j*np.interp(t, time_table, y_table)
             return X + Y
 
-class Fourier : 
+class Fourier :
+    """
+        Convert coordinates found by ImageReader class to complex numbers with real and imaginary part.
+    
+    :param time_table:
+    :type time_table: tuple
+    :param x_table:
+    :type x_table: int
+    :param y_table:
+    :type y_table: int
+    :param order: Variable that we use to determine the number of Fourier coefficients that we will generate.
+    :type order: int
+    """
 
     def __init__(self, time_table, x_table, y_table, order) :
         self.order = order
