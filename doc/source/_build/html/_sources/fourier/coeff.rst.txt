@@ -1,7 +1,8 @@
 Coefficients of Fourier
 ========================
 
-texte
+In this part, we will find the Fourier coefficients to locate approximately given points.
+
 
 The class methods
 -------------------

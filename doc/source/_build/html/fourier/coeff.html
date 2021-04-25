@@ -101,7 +101,7 @@ Show Source
 </ul>
 <p class="caption"><span class="caption-text">Gallery of examples</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="gallery/examples.html">examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery/examples.html">Examples</a></li>
 </ul>
 
             </nav>
@@ -142,7 +142,7 @@ Show Source
 </ul>
 <p class="caption"><span class="caption-text">Gallery of examples</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="gallery/examples.html">examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery/examples.html">Examples</a></li>
 </ul>
 
             </nav>
@@ -156,25 +156,41 @@ Show Source
         
   <div class="section" id="coefficients-of-fourier">
 <h1>Coefficients of Fourier<a class="headerlink" href="#coefficients-of-fourier" title="Permalink to this headline">¶</a></h1>
-<p>texte</p>
+<p>In this part, we will find the Fourier coefficients to locate approximately given points.</p>
 <div class="section" id="the-class-methods">
 <h2>The class methods<a class="headerlink" href="#the-class-methods" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier">
 <em class="property">class </em><code class="sig-prename descclassname">Package.draw_circle_fourier.CoeffFourier.CoeffFourier.</code><code class="sig-name descname">Fourier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time_table</span></em>, <em class="sig-param"><span class="n">x_table</span></em>, <em class="sig-param"><span class="n">y_table</span></em>, <em class="sig-param"><span class="n">order</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Convert coordinates found by ImageReader class to complex numbers with real and imaginary part.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>time_table</strong> (<em>tuple</em>) – Time list from 0 to 2PI.</p></li>
-<li><p><strong>x_table</strong> (<em>float</em>) – Coordinate of the X axis.</p></li>
-<li><p><strong>y_table</strong> (<em>float</em>) – Coordinate on the Y axis</p></li>
-<li><p><strong>order</strong> (<em>int</em>) – Variable that we use to determine the number of Fourier coefficients that we will generate.</p></li>
-</ul>
-</dd>
-</dl>
+<dd><dl class="py method">
+<dt id="Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier.DFT">
+<code class="sig-name descname">DFT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">coef_list</span></em>, <em class="sig-param"><span class="n">order</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier.DFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the discrete fourier series with a given order.
+This function will simply calculate the Fourier transforms of our coefficients found previously
+coef_list is the output parameter of the previously defined function.
+It will return as output parameters, the real part and the imaginary part of the transform.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier.coef_list">
+<code class="sig-name descname">coef_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time_table</span></em>, <em class="sig-param"><span class="n">x_table</span></em>, <em class="sig-param"><span class="n">y_table</span></em>, <em class="sig-param"><span class="n">order</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier.coef_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function aims to calculate the complex Fourier coefficients and decompose them into a real and imaginary part</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier.y_table">
+<code class="sig-name descname">y_table</code><a class="headerlink" href="#Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier.y_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert coordinates found by ImageReader class to complex numbers with real and imaginary part.
+:param time_table: Time list from 0 to 2PI.
+:type time_table: tuple
+:param x_table: Coordinate of the X axis.
+:type x_table: float
+:param y_table: Coordinate on the Y axis
+:type y_table: float
+:param order: Variable that we use to determine the number of Fourier coefficients that we will generate.
+:type order: int</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -237,7 +253,7 @@ Show Source
 </ul>
 <p class="caption"><span class="caption-text">Gallery of examples</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="gallery/examples.html">examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery/examples.html">Examples</a></li>
 </ul>
 
       </div>
