@@ -27,13 +27,13 @@ release = '0.1'
 
 # -- General configuration ---------------------------------------------------
 #pip install sphinx_materialdesign_theme
-#import sphinx_rtd_theme
-import sphinx_materialdesign_theme
+import sphinx_rtd_theme
+#import sphinx_materialdesign_theme
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx_materialdesign_theme', 'sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.napoleon'
+extensions = ['sphinx_rtd_theme', 'sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.napoleon'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -52,8 +52,8 @@ exclude_patterns = []
 #
 html_static_path = ['_static']
 #html_theme = 'alabaster'
-#html_theme = "sphinx_rtd_theme"
-html_theme = "sphinx_materialdesign_theme"
+html_theme = "sphinx_rtd_theme"
+#html_theme = "sphinx_materialdesign_theme"
 html_title = "Fourier Transform Drawing"
 html_short_title = "Fourier Drawing"
 # Add any paths that contain custom static files (such as style sheets) here,
