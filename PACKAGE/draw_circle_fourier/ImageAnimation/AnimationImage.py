@@ -43,9 +43,9 @@ class DrawAnimation:
         ax.set_aspect('equal')
 
         # Initialize
-        line = plt.plot([], [], 'k-', linewidth=2)[0]
-        radius = [plt.plot([], [], 'r-', linewidth=0.5, marker='o', markersize=1)[0] for _ in range(2 * order + 1)]
-        circles = [plt.plot([], [], 'r-', linewidth=0.5)[0] for _ in range(2 * order + 1)]
+        line = plt.plot([], [], 'k-', linewidth = 2)[0]
+        radius = [plt.plot([], [], 'r-', linewidth = 0.5, marker = 'o', markersize = 1)[0] for _ in range(2 * order + 1)]
+        circles = [plt.plot([], [], 'r-', linewidth = 0.5)[0] for _ in range(2 * order + 1)]
 
         def update_c(c, t):
             """
@@ -65,7 +65,7 @@ class DrawAnimation:
                 Creates a variable that iterates through the numbers between order+i and order-i.
             """
             idx = []
-            for i in range(1,order+1):
+            for i in range(1, order+1):
                 idx.extend([order+i, order-i]) 
             return idx    
 
@@ -81,7 +81,7 @@ class DrawAnimation:
             pos = coef[order]
             c = update_c(coef, i / len(space) * tau)
             idx = sort_velocity(order)
-            for j, rad, circle in zip(idx,radius,circles):
+            for j, rad, circle in zip(idx, radius, circles):
                 new_pos = pos + c[j]
                 # plot radius in each circles
                 rad.set_data([pos[0], new_pos[0]], [pos[1], new_pos[1]])
@@ -93,5 +93,5 @@ class DrawAnimation:
                 pos = new_pos
 
         # Animation
-        ani = animation.FuncAnimation(fig, animate, frames=len(space), interval=5)
+        ani = animation.FuncAnimation(fig, animate, frames = len(space), interval=5)
         return ani
