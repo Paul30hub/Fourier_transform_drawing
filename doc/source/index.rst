@@ -20,8 +20,6 @@ Contents
 
    install/installation.rst
    install/how_to_use.rst
-   install/contact.rst
-   install/sources.rst
 
 .. toctree::
    :maxdepth: 1
