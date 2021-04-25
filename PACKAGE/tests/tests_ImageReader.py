@@ -9,5 +9,5 @@ class TestClass_ImageReader(unittest.TestCase):
         self.assertIs(type(r[1]), int)
         self.assertIs(type(r[2]), int)
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     unittest.main()        
