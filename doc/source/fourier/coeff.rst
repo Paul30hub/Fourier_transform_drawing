@@ -13,7 +13,7 @@ When there are more than 500 coefficients ask, the program takes time and the im
 
 
 .. image:: velo_coco.png
-  :width: 400
+  :width: 100
   :alt: Alternative text
 
 The class methods
