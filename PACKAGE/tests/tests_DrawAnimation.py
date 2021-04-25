@@ -11,5 +11,5 @@ class TestClass_DrawAnimation(unittest.TestCase):
         idx = cd.sort_velocity(50) #Exemple avec order=50
         self.assertIs(type(idx), list)
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     unittest.main()        
