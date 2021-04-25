@@ -13,11 +13,11 @@ When there are more than 500 coefficients ask, the program takes time and the im
 
 
 .. image:: velo_coco.png
-  :width: 100
+  :width: 300
   :alt: Alternative text
 
 The class methods
 -------------------
 
-.. autoclass:: PACKAGE.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier
+.. autoclass:: Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier
   :members:
