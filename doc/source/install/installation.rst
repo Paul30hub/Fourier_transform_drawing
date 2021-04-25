@@ -1,7 +1,7 @@
 Installation
 =============
 
-Run a terminal and then : 
+Run a terminal, copy the following and run : 
 
 .. role:: bash(code)
    :language: bash

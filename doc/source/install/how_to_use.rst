@@ -46,7 +46,11 @@ Once you've installed the package, create a python file, for example 'script.py'
     anim = b.visualize(x_DFT, y_DFT, fouriercoeff, order, space, [xmin, xmax, ymin, ymax])
     
     # You can change the extension if you either want to save it as .gif or .mp4
-    anim.save('draw-fourier.gif',writer='ffmpeg')
+
+    #Change based on what writer you have
+    #HTML(anim.to_html5_video())
+    #anim.save('pi.gif',writer='ffmpeg')
+    anim.save('draw-fourier.gif',writer='pillow')
     
 
 
@@ -57,4 +61,6 @@ You can try for example with this image : https://github.com/Paul30hub/Fourier_t
 Then, you can chose the 'order' for the calculation of the Fourier coefficients, which corresponds to the number of terms used to calculate the fourier series.
 
 Finally, you can choose the extension if you either want to save the animation as .gif or .mp4
+
+Run the code.
 
