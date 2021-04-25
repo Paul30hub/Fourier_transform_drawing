@@ -52,7 +52,7 @@ Once you've installed the package, create a python file, for example 'script.py'
 
 You have to replace 'your_url' in the ImageReader function with your own URL that contains an image in JPEG, JPG or PNG format.
 
-You can try for example with this image : https://raw.githubusercontent.com/Paul30hub/Fourier_transform_drawing/main/PACKAGE/draw_circle_fourier/DATA/velo.jpeg/
+You can try for example with this image : https://github.com/Paul30hub/Fourier_transform_drawing/blob/main/PACKAGE/draw_circle_fourier/DATA/velo.jpeg
 
 Then, you can chose the 'order' for the calculation of the Fourier coefficients, which corresponds to the number of terms used to calculate the fourier series.
 

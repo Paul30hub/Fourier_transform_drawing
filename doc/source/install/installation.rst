@@ -7,8 +7,8 @@ Run a terminal and then :
    :language: bash
 
    
-Install from Pypi
-^^^^^^^^^^^^^^^^^^^
+Install from Test Pypi
+^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
 
     pip install -i https://test.pypi.org/simple/ draw-circle-fourier

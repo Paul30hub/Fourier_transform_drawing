@@ -21,5 +21,5 @@ For fast and clear drawings upload JPEG or PNG that are less than 50kb and can b
 The class methods
 -------------------
 
-.. autoclass:: Package.draw_circle_fourier.ImageReader.Image.ImageReader
+.. autoclass:: PACKAGE.draw_circle_fourier.ImageReader.Image.ImageReader
    :members:

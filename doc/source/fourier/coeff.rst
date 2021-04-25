@@ -21,3 +21,4 @@ The class methods
 
 .. autoclass:: PACKAGE.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier
   :members:
+
