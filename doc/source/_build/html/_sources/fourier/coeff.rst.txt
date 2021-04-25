@@ -1,6 +1,8 @@
 Coefficients of Fourier
 ========================
 
+texte
+
 The class methods
 -------------------
 
