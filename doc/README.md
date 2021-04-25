@@ -1,1 +1,1 @@
-A documentation (using sphinx) will be stored here.
+## Sphinx documentation is available 
