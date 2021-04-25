@@ -43,8 +43,8 @@ Time efficiency
 ============  =====================           
 Functions     Execution time(s)       
 ============  =====================
-get_tour       1.17s
-coef_list      1.44s
-visualize      0.665s
+get_tour       0.67347s
+coef_list      14.4338s
+visualize      26.20057s
 ============  =====================  
 
