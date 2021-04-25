@@ -12,12 +12,12 @@ When there are more than 500 coefficients ask, the program takes time and the im
 
 
 
-.. image:: path/filename.png
+.. image:: 1.png
   :width: 400
   :alt: Alternative text
 
 The class methods
 -------------------
 
-.. autoclass:: Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier
-   :members:
+.. autoclass:: PACKAGE.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier
+  :members:
