@@ -40,6 +40,16 @@ This command returns the Boolean FALSE so in the end our matrix of Fourier coeff
 Time efficiency
 ****************
 
+We ran the program which was on the example of the bike photo with a number of coefficients equal to 100. We find these values ​​for the execution time for each functions. 
+
+However, we can say that the get_tour function is the only one independent of the number of coefficients that we want to generate.
+
+In the end, the time taken to execute our program will be influenced by the number of coefficients we have chosen.
+
+.. code-block:: Python
+
+     order = 100
+
 ============  =====================           
 Functions     Execution time(s)       
 ============  =====================
@@ -48,3 +58,10 @@ coef_list      14.4338s
 visualize      26.20057s
 ============  =====================  
 
+.. code-block:: Python
+
+  import time 
+  start = time.time()
+  ...
+  end = time.time()
+  print(end - start)
