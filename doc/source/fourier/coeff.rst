@@ -19,5 +19,5 @@ When there are more than 500 coefficients ask, the program takes time and the im
 The class methods
 -------------------
 
-.. autoclass:: Package.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier
+.. autoclass:: PACKAGE.draw_circle_fourier.CoeffFourier.CoeffFourier.Fourier
   :members:
