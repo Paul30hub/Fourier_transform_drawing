@@ -9,13 +9,8 @@ My part is to find the fourier coefficients to approximately locate given points
 
 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-### Burgat Paul :
-
-
-__________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-
-### Guillaumont Pierre :
-
+### Burgat Paul and Guillaumont Pierre :
+Our part is to display an animation drawing the image with circles spinning with Fourier's coefficients. For reach this purpose, we will create a class of functions. We will collect Fourier's coefficients and order wanted before display a .gif contain animation. 
 
 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
