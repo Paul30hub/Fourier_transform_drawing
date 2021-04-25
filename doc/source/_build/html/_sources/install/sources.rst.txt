@@ -17,3 +17,16 @@ Videos sources
 `Coding Challenge Drawing with Fourier Transform and Epicycle <https://www.youtube.com/watch?v=MY4luNgGfms>`_
 
 `Two minutes for the Fermi and Neumann elephant <https://www.youtube.com/watch?v=uazPP0ny3XQ>`_
+
+`Visualization of Fourier Series | Fast Fourier Transform - FFT in Python <https://www.youtube.com/watch?v=k8opTJTkGek&t=239s>`_
+
+`Tests unitaires avec Python <https://www.youtube.com/watch?v=D8wdAYwH-ng&t=256s>`_
+
+
+Help to code in python
+^^^^^^^^^^^^^^^^^^^^^^
+
+`unittest — Unit testing framework <https://docs.python.org/3/library/unittest.html>`_
+
+`Matplotlib: Visualization with Python <https://matplotlib.org/>`_
+

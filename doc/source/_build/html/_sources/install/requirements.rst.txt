@@ -1,8 +1,9 @@
+*************
 Sparse matrix
-=============
+*************
 
 
-Introduction
+What is this 
 ^^^^^^^^^^^^^
 
 First of all, it must be said that a sparse matrix is ​​a matrix in which most of the elements are zero and only a few elements are different from zero.
@@ -33,4 +34,17 @@ We are therefore going to check if our matrix of the fourier coefficients is spa
 
 
 This command returns the Boolean FALSE so in the end our matrix of Fourier coefficients is **not a sparse matrix**.
+
+
+****************
+Time efficiency
+****************
+
+============  =====================           
+Functions     Execution time(s)       
+============  =====================
+get_tour       
+coef_list
+visualize
+============  =====================  
 

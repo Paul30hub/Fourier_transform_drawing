@@ -23,3 +23,7 @@ The class methods
 
 .. autoclass:: PACKAGE.draw_circle_fourier.ImageReader.Image.ImageReader
    :members:
+
+   
+.. image:: draw.png
+  :width: 900

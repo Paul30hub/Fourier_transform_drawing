@@ -93,9 +93,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Sparse matrix</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-this">What is this</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#time-efficiency">Time efficiency</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_use.html">How to use ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contacts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sources.html">Sources and documentation</a></li>
@@ -178,8 +179,8 @@
             
   <div class="section" id="sparse-matrix">
 <h1>Sparse matrix<a class="headerlink" href="#sparse-matrix" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-this">
+<h2>What is this<a class="headerlink" href="#what-is-this" title="Permalink to this headline">¶</a></h2>
 <p>First of all, it must be said that a sparse matrix is ​​a matrix in which most of the elements are zero and only a few elements are different from zero.</p>
 <p>In Python, these sparse matrices, based mainly on NumPy arrays, are efficiently implemented in the scipy.sparse submodule of the SciPy library which has been implemented according to the following idea: instead of storing all the values ​​in a matrix dense, it is easier to store non-zero values ​​in any format.</p>
 <p>The best performance in terms of time and space is obtained when we store a sparse array with the <strong>scipy.sparse</strong> submodule.</p>
@@ -195,6 +196,31 @@
 </div>
 <p>This command returns the Boolean FALSE so in the end our matrix of Fourier coefficients is <strong>not a sparse matrix</strong>.</p>
 </div>
+</div>
+<div class="section" id="time-efficiency">
+<h1>Time efficiency<a class="headerlink" href="#time-efficiency" title="Permalink to this headline">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Functions</p></th>
+<th class="head"><p>Execution time(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>get_tour</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>coef_list</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>visualize</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
