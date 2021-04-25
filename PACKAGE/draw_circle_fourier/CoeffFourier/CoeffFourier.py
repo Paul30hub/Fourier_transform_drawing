@@ -35,6 +35,7 @@ class Fourier:
     def coef_list(self,time_table, x_table, y_table, order) :
        """
        This function aims to calculate the complex Fourier coefficients and decompose them into a real and imaginary part
+       Integrate across f 
        """
        coef_list = []
        for n in range(-order, order+1):
@@ -42,10 +43,6 @@ class Fourier:
             imag_coef = quad(lambda t: np.imag(f(t, time_table, x_table, y_table) * np.exp(-n*1j*t)), 0, tau, limit=100, full_output=1)[0]/tau
             coef_list.append([real_coef, imag_coef])
             return np.array(coef_list)
-
-            """
-           integrate across f 
-            """
 
 
     def DFT(self, t, coef_list, order):
