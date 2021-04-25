@@ -24,23 +24,29 @@ class Fourier:
         self.x_table = x_table
         self.y_table = y_table
 
-        """
+    def coef_list(self,time_table, x_table, y_table, order) :
+       """
+
         Convert coordinates found by ImageReader class to complex numbers with real and imaginary part.
 
         :param time_table: Time list from 0 to 2PI.
-        :type time_table: tuple
-        :param x_table: Coordinate of the X axis.
-        :type x_table: float
-        :param y_table: Coordinate on the Y axis
-        :type y_table: float
-        :param order: Variable that we use to determine the number of Fourier coefficients that we will generate.
-        :type order: int
-        """
 
-    def coef_list(self,time_table, x_table, y_table, order) :
-       """
-       This function aims to calculate the complex Fourier coefficients and decompose them into a real and imaginary part
-       Integrate across f 
+        :type time_table: tuple
+
+        :param x_table: Coordinate of the X axis.
+
+        :type x_table: float
+
+        :param y_table: Coordinate on the Y axis
+
+        :type y_table: float
+
+        :param order: Variable that we use to determine the number of Fourier coefficients that we will generate.
+
+        :type order: int
+
+        :rtype : Desired complex Fourier coefficients in the form of an (array) of elementary values
+
        """
        coef_list = []
        for n in range(-order, order+1):
@@ -49,8 +55,33 @@ class Fourier:
             coef_list.append([real_coef, imag_coef])
             return np.array(coef_list)
 
+       """
+        Integrate across f 
+       """    
+
+       """
+        This function aims to calculate the complex Fourier coefficients and decompose them into a real and imaginary part
+       """
+
 
     def DFT(self, t, coef_list, order):
+
+        """
+
+        :param t : time
+
+        :param coef_list :  complex Fourier coefficients in the form of an (array) of elementary values
+
+        :param order : Variable that we use to determine the number of Fourier coefficients that we will generate.
+
+        rtype : It will return as output parameters, the real part and the imaginary part of the transform.
+
+
+        """
+
+
+
+
         """
         Compute the discrete fourier series with a given order.
         This function will simply calculate the Fourier transforms of our coefficients found previously
@@ -61,3 +92,4 @@ class Fourier:
         series = np.sum( (coef_list[:,0]+1j*coef_list[:,1]) * kernel[:])
 
         return np.real(series), np.imag(series)
+
