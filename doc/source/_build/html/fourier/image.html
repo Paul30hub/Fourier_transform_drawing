@@ -89,7 +89,7 @@ Show Source
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/requirements.html">Other requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/contact.html">Contacts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/sources.html">Sources and documentation</a></li>
 </ul>
@@ -130,7 +130,7 @@ Show Source
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/requirements.html">Other requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/contact.html">Contacts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/sources.html">Sources and documentation</a></li>
 </ul>
@@ -158,13 +158,11 @@ Show Source
 <h1>Image Manipulation<a class="headerlink" href="#image-manipulation" title="Permalink to this headline">¶</a></h1>
 <p>A line drawing in a two dimensions space can be described mathematically as a parametric function, that is to say, two single variable functions such as :</p>
 <div class="math notranslate nohighlight">
-\[f(t) = ( x(t) , y(t) )\]</div>
+\[f(t) = ( \, x(t) , y(t) \,)\]</div>
 <p>From a simple line drawing, a parametric path through the black pixels in that image can be found, and this path can be seperated into its <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components.</p>
 <p>The Fourier approximations of these two paths have to be calculated, and the coefficients have to be used from this approximation to determine the phase and amplitudes of the circles needed for the visualization.</p>
 <p>The main challenge to make something general is to create a list of points that, when joined, is as close as possible to the original image.</p>
-<p>The beginning is pretty simple we import an image, extract the points. Then, we extract the contour and using FindShortestTour, we order the points such that joining them gives a sensible image:</p>
-<p>After reading in these images, we first convert these images to black and white. After we have a binarized image, we can use library builtins to find the contours of the image. This leaves us with a set of contours, each of which
-is defined as an ordered set of points.</p>
+<p>The beginning is pretty simple we import an image, read the image, and convert this image to black and white. Then, we extract the contour and using the ‘get_tour function’, we order the points such that joining them gives an image.</p>
 <div class="section" id="important-note-on-image-selection">
 <h2>Important note on image selection:<a class="headerlink" href="#important-note-on-image-selection" title="Permalink to this headline">¶</a></h2>
 <p>For fast and clear drawings upload JPEG or PNG that are less than 50kb and can be made single path. It will be clear that your image cannot be made single path from the output, as the fourier transform will be applied to all paths.</p>
@@ -246,7 +244,7 @@ Make a time table from 0 to 2PI</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/requirements.html">Other requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/contact.html">Contacts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/sources.html">Sources and documentation</a></li>
 </ul>

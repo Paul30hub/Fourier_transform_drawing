@@ -11,14 +11,7 @@ Install from Pypi
 ^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
 
-    $ pip install -i https://test.pypi.org/simple/ draw-circle-fourier
-
-
-Install from Github
-^^^^^^^^^^^^^^^^^^^
-.. code-block:: bash
-
-    $ pip install git+https://github.com/Paul30hub/Fourier_transform_drawing.git
+    pip install -i https://test.pypi.org/simple/ draw-circle-fourier
 
 
 Dependencies

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     
-    <title>Draw &#8212; Fourier Transform Drawing</title>
+    <title>Visualization &#8212; Fourier Transform Drawing</title>
 
     <link rel="stylesheet" href="../_static/material-icons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
     <div class="mdl-layout__header-row">
         
         <nav class="mdl-navigation breadcrumb">
-            <a class="mdl-navigation__link is-active">Draw</a>
+            <a class="mdl-navigation__link is-active">Visualization</a>
         </nav>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation">
@@ -85,19 +85,19 @@ Show Source
         
             
             <nav class="mdl-navigation">
-                <p class="caption"><span class="caption-text">Installation, requirements, how to use, contacts and sources</span></p>
+                <p class="caption"><span class="caption-text">To begin</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/requirements.html">Some other requirements for the project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/requirements.html">Other requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/contact.html">Contacts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/sources.html">Sources and some more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/sources.html">Sources and documentation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Fourier Transform</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="image.html">Image Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="coeff.html">coeff</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Draw</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Visualization</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Gallery of examples</span></p>
 <ul>
@@ -126,19 +126,19 @@ Show Source
         
             
             <nav class="mdl-navigation">
-                <p class="caption"><span class="caption-text">Installation, requirements, how to use, contacts and sources</span></p>
+                <p class="caption"><span class="caption-text">To begin</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/requirements.html">Some other requirements for the project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/requirements.html">Other requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/contact.html">Contacts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/sources.html">Sources and some more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/sources.html">Sources and documentation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Fourier Transform</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="image.html">Image Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="coeff.html">coeff</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Draw</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Visualization</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Gallery of examples</span></p>
 <ul>
@@ -154,14 +154,53 @@ Show Source
     <div class="document">
         <div class="page-content">
         
-  <div class="section" id="draw">
-<h1>Draw<a class="headerlink" href="#draw" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-class-methods">
+<h2>The class methods<a class="headerlink" href="#the-class-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="Package.draw_circle_fourier.ImageAnimation.AnimationImage.DrawAnimation">
+<em class="property">class </em><code class="sig-prename descclassname">Package.draw_circle_fourier.ImageAnimation.AnimationImage.</code><code class="sig-name descname">DrawAnimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x_DFT</span></em>, <em class="sig-param"><span class="n">y_DFT</span></em>, <em class="sig-param"><span class="n">coef</span></em>, <em class="sig-param"><span class="n">order</span></em>, <em class="sig-param"><span class="n">space</span></em>, <em class="sig-param"><span class="n">fig_lim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Package.draw_circle_fourier.ImageAnimation.AnimationImage.DrawAnimation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an animation that draws a curve representing an image using Fourier coefficients.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_DFT</strong> (<em>list.</em>) – Real part of the Fourier transform.</p></li>
+<li><p><strong>y_DFT</strong> (<em>list.</em>) – Imaginary part of the Fourier transform.</p></li>
+<li><p><strong>coef</strong> (<em>ndarray.</em>) – Fourier coefficients.</p></li>
+<li><p><strong>order</strong> (<em>int.</em>) – Variable that we use to determine the number of Fourier coefficients that we will generate.</p></li>
+<li><p><strong>space</strong> (<em>tuple.</em>) – Variable used to give the number of images for the animation</p></li>
+<li><p><strong>fig_lim</strong> (<em>list.</em>) – Define the limit of the x and y axes of our plot.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="Package.draw_circle_fourier.ImageAnimation.AnimationImage.DrawAnimation.visualize">
+<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x_DFT</span></em>, <em class="sig-param"><span class="n">y_DFT</span></em>, <em class="sig-param"><span class="n">coef</span></em>, <em class="sig-param"><span class="n">order</span></em>, <em class="sig-param"><span class="n">space</span></em>, <em class="sig-param"><span class="n">fig_lim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Package.draw_circle_fourier.ImageAnimation.AnimationImage.DrawAnimation.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the drawing of the image and spinning circles animation.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 
 
         </div>
         <div class="side-doc-outline">
             <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">Visualization</a><ul>
+<li><a class="reference internal" href="#the-class-methods">The class methods</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
             </div>
         </div>
 
@@ -187,19 +226,19 @@ Show Source
       <div class="mdl-logo">Fourier-Transform-Drawing</div>
       <div>
         
-        <p class="caption"><span class="caption-text">Installation, requirements, how to use, contacts and sources</span></p>
+        <p class="caption"><span class="caption-text">To begin</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/requirements.html">Some other requirements for the project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/requirements.html">Other requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/how_to_use.html">How to use ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/contact.html">Contacts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/sources.html">Sources and some more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/sources.html">Sources and documentation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Fourier Transform</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="image.html">Image Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="coeff.html">coeff</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Draw</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Visualization</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Gallery of examples</span></p>
 <ul>
