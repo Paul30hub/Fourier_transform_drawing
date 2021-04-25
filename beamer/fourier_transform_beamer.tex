@@ -1,112 +1,424 @@
-
-\documentclass[11pt]{beamer}
-
-
-\textcolor{red}{\underline{\textbf{Spinning Circles Fourier Visualization}}}\\
-
-\section{Introduction}
-
-
-\textcolor{blue}{\underline{\textbf{Description : }}}
-
-
-\textcolor{blue}{\underline{\textbf{Why the Fourier series are
-interesting?}}
+\documentclass[aspectratio=169]{beamer}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{NTU}
+\usepackage{animate}
+\usepackage{xmpmulti}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{media9}
+\usepackage{listings}
 
 
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+\author{KOAN, CORDOVAL, BURGAT, GUILLAUMONT }
+\title[Présentation du Projet de Développement Logiciel]{Package draw\_circle\_fourier}%Tu es sur du nom ? haha non
+\subtitle{Support visuel pour notre présentation}
+\institute{Université de Montpellier}
+\date{\today}%la présentation est en francais 
+
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+\usepackage{media9}
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \vspace{-10pt}
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.3\linewidth]{images/UM.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{BUT }
+
+Le but de ce projet est de créer un module Python capable de dessiner une animation de n'importe quelle image, en utilisant la série de Fourier. Ceci est inspiré de la vidéo de dessins en cercle de la série Fourier par 3Blue1Brown.
+\\
+
+
+Un intérêt particulier sur les paramètres (degrés d'approximation), la vitesse des vidéos serait d'intérêt. Des tests et des analyses sur diverses images doivent être étudiés. Dans un cas simple, on commencerait par la contrainte que l'image d'entrée peut être un fichier svg noir et blanc. Ensuite, une adaptation aux cas de couleur et au format d'image général (comme png, jpg, etc.) pourrait être ajoutée
+
+
+\href{https://draw-fourier-circle.readthedocs.io/en/latest/fourier/gallery/examples.html}{\textcolor{blue}{\textbf{DOC}}}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Répartition du travail }
+
+[Kenjy] Traitement des images et conversion en points :
+
+\hspace{1cm} $\bullet \hspace{0.2cm} \text{Extraction des coordonnées à partir d'une image}$
+
+\hspace{1cm} $\bullet \hspace{0.2cm} \text{Coordonnées X et Y -> Nombres Complexes}$
+
+[Chloë] Trouvez les coefficients de Fourier pour localiser approximativement des points donnés:
+
+\hspace{1cm} $\bullet \hspace{0.2cm} \text{Fonction pour générer x + iy à un instant t donné}$
+
+\hspace{1cm} $\bullet \hspace{0.2cm} \text{Fonction pour évaluer y au temps t en utilisant l'approximation de Fourier}$
+
+\hspace{1.4cm} du degré N
+
+\hspace{1cm} $\bullet \hspace{0.2cm} \text{Fonction pour calculer les coefficients}$
+
+\hspace{1cm} $\bullet \hspace{0.2cm} \text{Partie approximation}$
+
+[Pierre + Paul] Créer une animation à partir des coefficients calculés:
+
+\hspace{1cm} $\bullet \hspace{0.2cm} \text{Fonction qui modifie les coefficients afin de tracer des cercles}$
+
+\hspace{1.4cm} dans la dernière fonction.
+
+\hspace{1cm} $\bullet \hspace{0.2cm} \text{Fonction qui affiche le rayon de chaque cercle ainsi que le cercle}$
+
+\end{frame}
+
+  \begin{frame}
+\frametitle{Séries et Transformées de Fourier }
+\begin{columns}
+\begin{column}{0.5\textwidth}
+
+\begin{block}{Equation complexe générique}
+Si : $Z(t) = a_{0} + a_{1} e^{it} + a_{2} e^{2it} + \cdots +a_{N} e^{Nit} + a_{-1} e^{-it} + a_{-2} e^{-2it} + \cdots +a_{-N} e^{-Nit}$
+
+avec \begin{itemize}
+    \item  $n$ : vitesses des cercles
+    \item $a$ : rayons et phases
+\end{itemize} 
+
+Alors : $\forall n \in \mathbb{Z}, a_{n} = \frac{1}{\tau} \int_{0}^{\tau} \, Z(t) e^{-int} \, dt$
+  
+\end{block}
+
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+\begin{figure}
+    \centering
+            \includegraphics[width=0.7\linewidth]{Epicycloid-3.pdf}
+            \caption{Epicycloïde}
+            \end{figure}
+
+\end{column}
+\end{columns}
+\end{frame}
+
+\author{Kenjy Koan}
+\title[Présentation du Projet de Développement Logiciel]{Manipulation de l'image }
+
+\begin{frame}
+    \titlepage
+    \vspace{-10pt}
+\end{frame}
+
+\begin{frame}
+\frametitle{Manipulation de l'image }
+\begin{block}{Idée générale}
+  \begin{itemize}
+      \item Dessin linéaire en 2D $\rightarrow$ fonction paramétrique $f(t) = (\, x(t), y(t) \,)$
+      \item Chemin paramétrique passant par les pixels $\rightarrow$ composantes $x$ et $y$
+      \item Approximation par la transformée de Fourier \item Reconstitution fidèle de l'image
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Manipulation de l'image }
+  \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.45\linewidth]{parametric-plot.png}
+            \caption{Illustration de la méthode}
+        \end{center}
+    \end{figure}
+\end{frame}
+  
+ \begin{frame}
+  \frametitle{Manipulation de l'image }
+  \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.9\linewidth]{image reader.png}
+            \caption{Classe ImageReader}
+        \end{center}
+    \end{figure}
+  
+\end{frame}
 
 
 
+\author{Chloë Cordoval}
 
-\section{Step 1 : NOM part Kenjy:}
+\title[Présentation du Projet de Développement Logiciel]{Coefficients de Fourier}
 
-
-
-
-
-
-
-
+\begin{frame}
+    \titlepage
+    \vspace{-10pt}
+\end{frame}
 
 
+\begin{frame}
+\frametitle{Coefficients de Fourier}
+
+\begin{block}{Petite introduction }
+
+Dans cette partie, nous trouverons les coefficients de Fourier pour localiser approximativement des points donnés.
+
+Pour cela, nous avons créé une classe de fonctions nommée \textcolor{red}{\textbf{Fourier}} pour notre Package. 
 
 
-\section{Step 2 : Calculate Fourier Approximations}
+\end{block}
 
-In this part, our goal is to \underline{calculate the Fourier approximations}.
+\begin{block}{Séries de Fourier} 
 
-For this, we will calculate the complex Fourier coefficients for a given function.
+Pour une période L, les séries de Fourier complexes sont : $$\boxed{f(t) = \sum_{i=-\infty}^{\infty} C_{n} e^{i n t \frac{2\pi}{L}}}$$.
 
-First, let's come back to the definition of complex Fourier coefficients.
+\end{block}
+\end{frame}
 
-
-
-For period L, generally , We can see that “COMPLEX FOURIER SERIES" is $$\boxed{f(t) = \sum_{i=-\infty}^{\infty} C_{n} e^{i n t \frac{2\pi}{L}}}$$
-
-The coefficients, Cn, are normally complex numbers : 
+\begin{frame}{Séries de Fourier}
+    
+\begin{block}{Séries de Fourier} 
+On retrouve cette fonction à partir \textcolor{red}{\textbf{ des coefficients de Fourier}} :
 
 $$\boxed{Cn = \frac{1}{L}\int^{-\pi}_{\pi}e^{- i n t\frac{2\pi}{L}}f(t)dt}$$
 
-\underline{mathematical proof} : 
+\end{block}
+\end{frame}
 
-\includegraphics{2.png}
-
-In this part, therefore, we will describe the functions that are in my Fourier_Series_Coeff class.
-
-We are looking to calculate the complex Fourier coefficients for any given function so we will start by introducing the __init__ function which is called immediately after an instance of the class is created; it's a kind of builder.
-
-
-This function will take seven input parameters which are : 
-
-- fxn = Function to be transformed (as Python function object)
-- rnge = Tuple of range at which to evaluate fxn
-- N = Number of coefficients to calculate
-- Period = f different than full length of function
-- Num_points = Number of points at which to evalute function
-- Num_circles = This is needed to calculate proper offsets
-- Self = A reference to the current instance of the class
-
-\underline{First step}
-
-First, our __init__ function will save the original coordinates when we plot them in step number one.
-After, Spline function doesn't make endpoints exactly equal because This sets the firts and last points to their averagee.
-
-We can note that The transformation works best around edges when the function starts at zero.
-We are therefore going to initialize it to 0.
-
-\underline{Second step}
-
-Secondly, we define a function in our _init_ function which generates the complex numbers x + iy at a given time t with x representing the real part and y the imaginary part.
-
-We can specify that np.interp is a function from numpy that returns the one-dimensional piecewise linear interpolant to a function with given discrete data points (xp, fp), evaluated at x.
-
-Next we define a function called COCO which evaluates a function f at time t using a Fourier approximation.
-
-Now, we define the function Cn which takes as input parameter an integer n and which calculates the complex coefficients.
-
-\underline{Third step}
-
-We deal in a third step with the approximation that interests us most for the rest. 
-
-We therefore define a function called FourierSeriesApprox which calculates these coefficients for the approximation of the studied image.
-
-This function takes as input variables, xvals, yvals, nmax. 
-
-Now we are going to define the amplitudes and the phases of our Fourier series.
-
-First, we break the series down into two parts: real part, imaginary part.
-
-The amplitude will then be the absolute value per element, that's why we use the "absolute" function in the "Numpy" library which calculates the absolute value by element.
-
-The period of the Series will be the angle of the complex argument. For that, we use the "angle" function of the "Numpy" library which returns the angle of the complex argument.
-
-At the end, we can evaluate the given function f at all the points specified in the domain at time t that is to say that we define : 
-
-      fourier_approximation = np.array([f(t, degree = N).real for t in t_vals])
-      circles_approximation  = np.array([f(t, degree = self.num_circles).real for t in t_vals])
+ \begin{frame}
+  \frametitle{Manipulation de l'image }
+  \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.7\linewidth]{2.png}
+            \caption{Classe Fourier}
+        \end{center}
+    \end{figure}
+  
+\end{frame}
 
 
 
+\begin{frame}{Description de la classe}
+
+Dans cette classe, nous retrouvons deux fonctions qui sont :
+\vskip 0.3cm
+\hspace{5cm} $\bullet \hspace{0.2cm}$ \textbf{Coeff\_List}
+\vskip 0.3cm
+\hspace{5cm} $\bullet \hspace{0.2cm}$ \textbf{DFT}
+\vskip 0.3cm
+La fonction \textcolor{red}{\textbf{Coeff\_List}} prend comme paramètres d'entrée, les valeurs \textbf{time\_table},  \textbf{x\_table}, \textbf{y\_table}, \textbf{order}.
+\vskip 0.3cm
+Ces valeurs sont les paramètres de sortie de la fonction \textcolor{blue}{\textbf{get\_tour}} de la classe  \textcolor{red}{\textbf{ImageReader}} décrite précédemment.
+\vskip 0.3cm
+Cette fonction a pour but de calculer les coefficients de Fourier complexes et les décomposer en une partie réelle et imaginaire. 
+
+\end{frame}
+
+
+\begin{frame}{Description de la classe}
+
+C'est pour cela que nous avons introduite hors du package une fonction \textcolor{red}{\textbf{f}} qui va convertir les coordonnées trouvées précédemment en nombres complexes par rapport à un temps t donné.
+\vskip 0.3cm
+Nous allons le retrouver dans notre boucle "for" dans la fonction \textbf{Coef\_List} car c'est elle qui va être décomposée en partie réelle et imaginaire. 
+\vskip 0.3cm
+Notre fonction retournera les valeurs de \textbf{coef\_list} sous forme d'un array qui a été initialisé avant notre itération comme une liste vide.
+\vskip 0.3cm
+Nous aurons donc les coefficients de Fourier complexes voulus sous forme d'un tableau (array) de valeurs élémentaires. 
+\end{frame}
+
+\begin{frame}{Transformée de Fourier}
+    
+\begin{block}{Séries de Fourier} 
+Soit une fonction f de $\mathrm{L}^{1}(\mathbb{R})$. On appelle  \textcolor{red}{\textbf{transformée de Fourier}} de f, notée F(t), la fonction : 
+
+$$\boxed{F(t) = \frac{1}{\sqrt{2\pi}}.\int^{\infty}_{-\infty} e^{-ixt}f(x)dx}$$
+
+\end{block}
+\end{frame}
+
+\begin{frame}{Description de la classe}
+
+La fonction \textcolor{red}{\textbf{DFT}} pour "Discrete Fourier Transform", prend comme paramètres d'entrée, les valeurs \textbf{coef\_list},  \textbf{t}, \textbf{order}.
+
+
+\vskip 0.3cm
+\textbf{coef\_list} est le paramètre de sortie de la fonction \textcolor{red}{\textbf{Coef\_List}} définie dans notre classe. 
+\vskip 0.3cm
+
+Cette fonction va simplement calculer les transformées de Fourier de nos coefficients trouvés précédemment. 
+
+\vskip 0.3cm
+Elle va retourner comme paramètres de sortie, la partie réelle et la partie imaginaire de la transformée.  
+
+\end{frame}
+
+
+
+\author{Burgat Paul et Guillaumont Pierre}
+
+\title[Présentation du Projet de Développement Logiciel]{Visualisation des cercles de rotation de Fourier}
+
+\begin{frame}
+    \titlepage
+    \vspace{-10pt}
+\end{frame}
+
+\begin{frame}
+\frametitle{Visualisation des cercles de rotation de Fourier}
+
+\begin{block}{Introduction}
+  Dans cette partie, à partir des coefficients de Fourier trouvés pour localiser approximativement des points donnés, nous allons faire une animation qui va tracer une courbe représentant une image choisie.
+  Pour se faire, nous avons créé une classe de fonctions \textcolor{red}{\textbf{DrawAnimation}}.
+\end{block}
+
+\end{frame}
+\begin{frame}{Description de la classe}
+\vskip 0.3cm
+
+La classe \textcolor{red}{\textbf{DrawAnimation}} est composée de 4 fonctions :
+\vskip 0.3cm
+$\bullet \hspace{0.2cm}$ \textbf{visualize}
+\vskip 0.3cm
+$\bullet \hspace{0.2cm}$ \textbf{update\_c}
+\vskip 0.3cm
+
+$\bullet \hspace{0.2cm}$ \textbf{sort\_velocity}
+\vskip 0.3cm
+
+$\bullet \hspace{0.2cm}$ \textbf{animate}
+\vskip 0.3cm
+
+\end{frame}
+
+\begin{frame}
+
+  \frametitle{Manipulation de l'image }
+  \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.6\linewidth]{5.png}
+            \caption{Class\_DrawAnimation}
+        \end{center}
+    \end{figure}
+
+
+\end{frame}
+
+\begin{frame}{Fonction visualize}
+    
+
+La fonction \textbf{visualize} prend comme variables x\_DFT et y\_DFT qui proviennent de la fonction \textbf{DFT} de la classe \textcolor{red}{\textbf{Fourier}},  ensuite elle prend comme paramètres \textbf{coef} et \textbf{order}.
+
+\textbf{coef} représente les coefficients de Fourier et \textbf{order} nous donnera le nombre de coefficients que l'on souhaite, si \textbf{order}=50, nous aurons 100 coefficients de Fourier.
+La variable \textbf{space} représente une liste de données allant de 0 à \textbf{tau}, \textbf{tau} est une constante de cercle égale à 2$\pi$, le rapport de la circonférence d un cercle à son rayon, et pour finir \textbf{fig\_lim} représente les limites des coordonnées x et y de notre figure. 
+\newline
+Cette fonction a pour but de faire une visualisation qui représente une image choisie à l'aide des cercles de rotation de Fourier. 
+\end{frame}
+\begin{frame}{Fonction update\_c}
+Pour réaliser cela, nous définissons la fonction \textbf{update\_c} qui prend comme variables \textbf{c} et \textbf{t}. La variable \textbf{c} est un ndarray qui nous le verrons plus tard correspond au paramètre \textbf{coef} de la fonction \textbf{visualize} et la variable \textbf{t} est un entier que nous définierons plus tard. Ensuite on itinialise un nouveau ndarray \textbf{new\_c} dans cette fonction, le but de cette fonction est d'arranger les parties réelles et imaginaires des coefficients de Fourier afin de pouvoir afficher le rayon de chaque cercle ainsi que le cercle dans la fonction \textbf{animate}.
+
+\end{frame}
+
+\begin{frame}
+    
+    \frametitle{Manipulation de l'image }
+  \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.6\linewidth]{6.png}
+            \caption{Class\_DrawAnimation}
+        \end{center}
+    \end{figure}
+    
+\end{frame}
+
+\begin{frame}{Fonction sort\_velocity}
+La fonction \textbf{sort\_velocity} prend en entrée la variable \textbf{order} définie dans la fonction \textbf{visualize}. Elle permet de créer une variable \textbf{idx} qui est utilisée dans la fonction \textbf{animate}. On initialise \textbf{idx} comme une liste vide puis on la remplit grâce à une boucle for pour i=1 de \textbf{order}+1 à \textbf{order}-1 jusqu'à pour i=\textbf{order}+1 de $2\times \textbf{order}$ à 0.
+    
+\end{frame}
+
+\begin{frame}{Fonction animate}
+
+La fonction \textbf{animate} prend en entrée un entier \textit{i}. Elle permet d'afficher le rayon de chaque cercle ainsi que le cercle grâce à une double boucle  \textbf{for} imbriqué. A chaque itération, on affiche un cercle supplémentaire et son rayon. \\
+Duquel on affichera le prochain cercle via les variables \textbf{pos} et \textbf{new\_pos} 
+Cette fonction trace aussi l'approximation de l'image en utilisant la commande \textbf{line.set\_data}.\\
+\bigskip
+Pour avoir un rendu animé, on utilise la fonction \textbf{FuncAnimation} du package \textbf{matplotlib.animate}.
+
+\end{frame}
+
+
+\author{Koan Kenjy, Cordoval Chloë, Burgat Paul, Guillaumont Pierre}
+
+\title[Présentation du Projet de Développement Logiciel]{Exemples}
+
+\begin{frame}
+    \titlepage
+    \vspace{-10pt}
+\end{frame}
+
+
+
+\begin{frame}{EXEMPLES}
+
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple1.ipynb}{\textcolor{blue}{\textbf{Coeur-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/Heart.gif}{\textcolor{blue}{\textbf{Coeur-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple2.ipynb}{\textcolor{blue}{\textbf{Star-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/star.gif}{\textcolor{blue}{\textbf{Star-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple3.ipynb}{\textcolor{magenta}{\textbf{Horse-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/Horse.gif}{\textcolor{magenta}{\textbf{Horse-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple4.ipynb}{\textcolor{red}{\textbf{Velo-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/velo.gif}{\textcolor{red}{\textbf{Velo-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple5.ipynb}{\textcolor{blue}{\textbf{Fish-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/Fish.gif}{\textcolor{blue}{\textbf{Fish-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple6.ipynb}{\textcolor{red}{\textbf{Bart-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/Bart.gif}{\textcolor{red}{\textbf{Bart-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple7.ipynb}{\textcolor{magenta}{\textbf{Papillon-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/Buuterfly.gif}{\textcolor{magenta}{\textbf{Papillon-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple8.ipynb}{\textcolor{magenta}{\textbf{Akatsuki-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/Akatsuki.gif}{\textcolor{magenta}{\textbf{Akatsuki-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple9.ipynb}{\textcolor{blue}{\textbf{Apple-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/Apple.gif}{\textcolor{blue}{\textbf{Apple-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple10.ipynb}{\textcolor{red}{\textbf{Rolex-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/Rolex.gif}{\textcolor{red}{\textbf{Rolex-2}}}
+\vskip 0.1cm
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/exemple11.ipynb}{\textcolor{magenta}{\textbf{Puma-1}}}
+\href{https://github.com/Chloe971/EXEMPLE/blob/main/gif/Puma.gif}{\textcolor{magenta}{\textbf{Puma-2}}}
 
 
 
@@ -115,16 +427,37 @@ At the end, we can evaluate the given function f at all the points specified in 
 
 
 
-\section{Step 3 : NOM part Pierre/Paul:}
-
-
-
-\section{Application on selected images}
-
+    
+\end{frame}
 
 
 
 
 
 
-\section{Conclusion:}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -30,3 +30,4 @@ Help to code in python
 
 `Matplotlib: Visualization with Python <https://matplotlib.org/>`_
 
+`<https://numpy.org/>`_
