@@ -46,6 +46,8 @@ However, we can say that the get_tour function is the only one independent of th
 
 In the end, the time taken to execute our program will be influenced by the number of coefficients we have chosen.
 
+The program will therefore take 47.7475s to fully run for a number of coefficients equal to 100
+
 .. code-block:: Python
 
      order = 100
