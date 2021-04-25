@@ -25,5 +25,5 @@ The class methods
    :members:
 
    
-.. image:: draw.png
+.. image:: image.png
   :width: 900
