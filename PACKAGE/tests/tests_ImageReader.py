@@ -1,4 +1,4 @@
-    import UnitTest.ImageReader as ir
+import UnitTest.ImageReader as ir
 import unittest
 
 class TestClass_ImageReader(unittest.TestCase):

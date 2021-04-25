@@ -5,14 +5,18 @@ from scipy.integrate import quad
 from numpy import interp
 
 def f(t, time_table, x_table, y_table):
-            """
-            Convert the X and Y coords to complex number over time
-            """
-            X = np.interp(t, time_table, x_table) 
-            Y = 1j*np.interp(t, time_table, y_table)
-            return X + Y
+        """
+        Convert the X and Y coords to complex number over time
+        """
+        X = np.interp(t, time_table, x_table) 
+        Y = 1j*np.interp(t, time_table, y_table)
+        return X + Y
 
 class Fourier:
+    """
+    Fourier
+    """
+
 
     def __init__(self, time_table, x_table, y_table, order) :
         self.order = order
@@ -22,6 +26,7 @@ class Fourier:
 
         """
         Convert coordinates found by ImageReader class to complex numbers with real and imaginary part.
+
         :param time_table: Time list from 0 to 2PI.
         :type time_table: tuple
         :param x_table: Coordinate of the X axis.

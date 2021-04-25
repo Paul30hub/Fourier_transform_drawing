@@ -12,7 +12,7 @@ When there are more than 500 coefficients ask, the program takes time and the im
 
 
 
-.. image:: path/filename.png
+.. image:: velo_coco.png
   :width: 400
   :alt: Alternative text
 
