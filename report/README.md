@@ -1,1 +1,1 @@
-A jupyter notebook file will be put here synthesizing the most interesting results we found, showing images/movies/widgets of interest.
+We have here a Jupyther Notebook synthesizing the most interesting results we found, showing images/movies/widgets of interest.
