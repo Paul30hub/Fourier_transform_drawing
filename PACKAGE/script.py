@@ -14,7 +14,7 @@ image = ImageReader("https://raw.githubusercontent.com/Paul30hub/Fourier_transfo
 time_table, x_table, y_table = image.get_tour()
 print(time_table, x_table, y_table)
 
-#Part COCO
+#Part Chloe
 
 order = 20
 
@@ -25,11 +25,11 @@ print(fouriercoeff)
 
 #Part Paul+Pierre
 
-space = np.linspace(0,tau,300)
+space = np.linspace(0, tau, 300)
 x_DFT = [cf.DFT(t, fouriercoeff, order)[0] for t in space]
 y_DFT = [cf.DFT(t, fouriercoeff, order)[1] for t in space]
 
-fig, ax = plt.subplots(figsize=(5, 5))
+fig, ax = plt.subplots(figsize = (5, 5))
 ax.plot(x_DFT, y_DFT, 'r--')
 ax.plot(x_table, y_table, 'k-')
 ax.set_aspect('equal', 'datalim')
@@ -42,5 +42,5 @@ anim = b.visualize(x_DFT, y_DFT, fouriercoeff, order, space, [xmin, xmax, ymin, 
 #Change based on what writer you have
 #HTML(anim.to_html5_video())
 #anim.save('pi.mp4',writer='ffmpeg')
-anim.save('velo.gif',writer='pillow')
+anim.save('velo.gif', writer = 'pillow')
 # %%
