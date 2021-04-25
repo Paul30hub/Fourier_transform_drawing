@@ -19,10 +19,15 @@ Contents
    :Caption: To begin
 
    install/installation.rst
-   install/requirements.rst
    install/how_to_use.rst
    install/contact.rst
    install/sources.rst
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Sparse matrix and Time efficiency
+
+   install/requirements.rst
 
 .. toctree::
    :maxdepth: 1
@@ -32,11 +37,20 @@ Contents
    fourier/coeff.rst
    fourier/draw.rst
 
+
 .. toctree::
    :maxdepth: 1
    :caption: Gallery of examples
 
    fourier/gallery/examples.rst
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contact and Sources
+
+   install/contact.rst
+   install/sources.rst
 
 
 Indices and tables

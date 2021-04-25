@@ -24,7 +24,7 @@ Please read the the documentation of draw_circle_fourier for installation, usage
 
 ## Video presentation
 
-Our video presentation of this package is available [here](https://draw-fourier-circle.readthedocs.io/)
+Our video presentation of this package is available [here](https://youtu.be/H8fFQhcuM9A)
 
 ### Goal : 
 

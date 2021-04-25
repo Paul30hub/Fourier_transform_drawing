@@ -1,6 +1,11 @@
 ## Work organization
 This document describes the work organization between BURGAT Paul, CORDOVAL Chloë, GUILLAUMONT Pierre and KOAN Kenjy.
 
+### Koan Kenjy :
+
+I handled the image processing. My task is to take any image, sample its profile by converting it into an X and Y parametric path in order to reconstruct the original image.
+
+
 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 ### Cordoval Chloë : 
@@ -14,7 +19,6 @@ Our part is to display an animation drawing the image with circles spinning with
 
 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-### Koan Kenjy :
 
 =======
 # Task affectation
