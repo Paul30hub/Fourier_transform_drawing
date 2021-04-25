@@ -16,7 +16,7 @@ print(time_table, x_table, y_table)
 
 #Part Chloe
 
-order = 20
+order = 40
 
 cf = Fourier(time_table, x_table, y_table,order)
 fouriercoeff = cf.coef_list(time_table, x_table, y_table, order)
