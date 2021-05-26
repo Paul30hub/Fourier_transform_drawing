@@ -53,7 +53,7 @@ class Fourier:
             real_coef = quad(lambda t: np.real(f(t, time_table, x_table, y_table) * np.exp(-n*1j*t)), 0, tau, limit=100, full_output=1)[0]/tau
             imag_coef = quad(lambda t: np.imag(f(t, time_table, x_table, y_table) * np.exp(-n*1j*t)), 0, tau, limit=100, full_output=1)[0]/tau
             coef_list.append([real_coef, imag_coef])
-            return np.array(coef_list)
+       return np.array(coef_list)
 
        """
         Integrate across f 
